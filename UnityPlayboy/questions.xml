@@ -130,7 +130,7 @@
 
 	<question>
 		<q name="q">Il y a un problème avec mon cellulaire, je n'ai pas ton numéro!</q>
-		<tag name="tag">Pick-up Line</tag>
+		<tag name="tag">Pickup</tag>
 		<r1 name="r1">Le voici : 555-5555</r1>
 		<r2 name="r2">on va commencer juste par mon indicatif régional.</r2>
 		<r3 name="r3">Fait voir ton cellulaire... non, tout est très bien comme sa.</r3>	
@@ -138,7 +138,7 @@
 
 	<question>
 		<q name="q">Toi, moi, de la crème fouettée et des menottes. Des questions?</q>
-		<tag name="tag">Pick-up Line</tag>
+		<tag name="tag">Pickup</tag>
 		<r1 name="r1">Oui, c'est quand la grande première?</r1>
 		<r2 name="r2">Oui, est-ce que les menottes sont nécessaires?</r2>
 		<r3 name="r3">Oui, est-ce qu'on peut enlever la composante "toi"?</r3>	
@@ -146,7 +146,7 @@
 
 	<question>
 		<q name="q">Je viens de réaliser ceci : tu ressembles beaucoup à ma prochaine date!</q>
-		<tag name="tag">Pick-up Line</tag>
+		<tag name="tag">Pickup</tag>
 		<r1 name="r1">Ta prochaine date est vraiment charmante!</r1>
 		<r2 name="r2">Ah bon! et bien, tu lui dira salut de ma part.</r2>
 		<r3 name="r3">Et toi tu ressemble à mon ex.</r3>	
@@ -185,7 +185,7 @@
 	</question>
 
 	<question>
-		<q name="q">Est-ce que tu crois aux coups de foudre au premier regard? Si non, je peut repasser.</q>
+		<q name="q">Est-ce que tu crois aux coups de foudre au premier regard? Si non, je peux repasser.</q>
 		<tag name="tag">Social</tag>
 		<r1 name="r1">Haha! oui tu es déjà pas mal foudroyant au premier regard!</r1>
 		<r2 name="r2">Ouin, ré-essayes-toi plus tard dans la soirée.</r2>
@@ -224,11 +224,4 @@
 		<r3 name="r3">Oh mon dieu, mais tu me saoûle avec tes lignes pathétiques.</r3>	
 	</question>
 
-	<question>
-		<q name="q"></q>
-		<tag name="tag"></tag>
-		<r1 name="r1"></r1>
-		<r2 name="r2"></r2>
-		<r3 name="r3"></r3>	
-	</question>
 </questionsList>

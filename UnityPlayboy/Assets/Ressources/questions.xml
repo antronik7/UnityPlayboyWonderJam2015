@@ -20,7 +20,7 @@
 		<q name="q">Belles jambes! À quelle heure elles ouvrent?</q>
 		<tag name="tag">Ose</tag>
 		<r1 name="r1">Pour toi, dans quelques minutes!</r1>
-		<r2 name="r2">Bof, elles restes souvent fermées</r2>
+		<r2 name="r2">Bof, elles restent souvent fermées</r2>
 		<r3 name="r3">7:00 AM, le 29 février</r3>	
 	</question>
 
@@ -29,7 +29,7 @@
 		<tag name="tag">Ose</tag>
 		<r1 name="r1">Oh là là!</r1>
 		<r2 name="r2">Bof, j'aime mieux être sur le dessus en général.</r2>
-		<r3 name="r3">J'ai entendu dire que tu ne faisait jamais tes devoirs.</r3>	
+		<r3 name="r3">J'ai entendu dire que tu ne faisais jamais tes devoirs.</r3>	
 	</question>
 	
 	<question>
@@ -61,7 +61,7 @@
 		<tag name="tag">Quotidien</tag>
 		<r1 name="r1">Oui, les arbres sont en fleur!</r1>
 		<r2 name="r2">Je ne sais pas moi, il fait combien dehors?</r2>
-		<r3 name="r3">Sa doit être mieux que ta face!</r3>	
+		<r3 name="r3">Ça doit être mieux que ta face!</r3>	
 	</question>
 
 	<question>
@@ -97,7 +97,7 @@
 	</question>
 
 	<question>
-		<q name="q">J'ai une vrai personnalité de lion!</q>
+		<q name="q">J'ai une vraie personnalité de lion!</q>
 		<tag name="tag">Animaux</tag>
 		<r1 name="r1">J'aime les personnes avec de la gueule!</r1>
 		<r2 name="r2">Et moi, celle d'un paresseux.</r2>
@@ -109,7 +109,7 @@
 		<tag name="tag">Rude</tag>
 		<r1 name="r1">Oh, damn!</r1>
 		<r2 name="r2">Pardon?</r2>
-		<r3 name="r3">Non, mais sa va pas la tête?</r3>	
+		<r3 name="r3">Non, mais ça va pas la tête?</r3>	
 	</question>
 
 	<question>
@@ -117,7 +117,7 @@
 		<tag name="tag">Rude</tag>
 		<r1 name="r1">Je suis effectivement très à l'aise dans un coin sombre!</r1>
 		<r2 name="r2">Et encore, je suis toujours moche dans le noir.</r2>
-		<r3 name="r3">Par contre, il n'y aura rien pour réglé ton cas désespéré.</r3>	
+		<r3 name="r3">Par contre, il n'y aura rien pour régler ton cas désespéré.</r3>	
 	</question>
 
 	<question>
@@ -133,7 +133,7 @@
 		<tag name="tag">Pick-up Line</tag>
 		<r1 name="r1">Le voici : 555-5555</r1>
 		<r2 name="r2">on va commencer juste par mon indicatif régional.</r2>
-		<r3 name="r3">Fait voir ton cellulaire... non, tout est très bien comme sa.</r3>	
+		<r3 name="r3">Fait voir ton cellulaire... non, tout est très bien comme ça.</r3>	
 	</question>
 
 	<question>
@@ -177,19 +177,19 @@
 	</question>
 
 	<question>
-		<q name="q">Alors, sa fait quoi d'être la personne la plus belle du bar?</q>
+		<q name="q">Alors, ça fait quoi d'être la personne la plus belle du bar?</q>
 		<tag name="tag">Social</tag>
 		<r1 name="r1">Sa fait toujours plaisir!</r1>
 		<r2 name="r2">Comme d'habitude.</r2>
-		<r3 name="r3">Sa fait pas grand chose d'autre que d'attirer les crétins dans ton genre.</r3>	
+		<r3 name="r3">Ça fait pas grand chose d'autre que d'attirer les crétins dans ton genre.</r3>	
 	</question>
 
 	<question>
-		<q name="q">Est-ce que tu crois aux coups de foudre au premier regard? Si non, je peut repasser.</q>
+		<q name="q">Est-ce que tu crois aux coups de foudre au premier regard? Si non, je peux repasser.</q>
 		<tag name="tag">Social</tag>
 		<r1 name="r1">Haha! oui tu es déjà pas mal foudroyant au premier regard!</r1>
-		<r2 name="r2">Ouin, ré-essayes-toi plus tard dans la soirée.</r2>
-		<r3 name="r3">À te voir aller, tu ne pourra malheureusement jamais causer de coups de foudre.</r3>	
+		<r2 name="r2">Ouin, réessaie-toi plus tard dans la soirée.</r2>
+		<r3 name="r3">À te voir aller, tu ne pourras malheureusement jamais causer de coups de foudre.</r3>	
 	</question>
 
 	<question>
@@ -213,7 +213,7 @@
 		<tag name="tag">Religieux</tag>
 		<r1 name="r1">Heheh, oui j'ai peut-être des aires de famille</r1>
 		<r2 name="r2">Toi non plus t'es pas croyable!</r2>
-		<r3 name="r3">Non, je serait plus du style satanique.</r3>	
+		<r3 name="r3">Non, je serais plus du style satanique.</r3>	
 	</question>
 
 	<question>

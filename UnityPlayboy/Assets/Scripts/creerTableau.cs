@@ -25,7 +25,7 @@ public class creerTableau : MonoBehaviour
     }
 
  [ContextMenu("Generate")]
-    public void GetQuestions()
+    public QuestionClass[] GetQuestions()
     {
 		string q = "";
 		string tag = "";
@@ -73,5 +73,6 @@ public class creerTableau : MonoBehaviour
 			i++;
         }
 		qTab = tmpTable.ToArray ();
+        return qTab;
     }
 }
