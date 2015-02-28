@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: 67b99d5347676884490eef24f6a2c232
+guid: d1bc53e54478e614caea4a0ad017c0d2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: back-bar_0
-    21300002: back-bar_1
-    21300004: back-bar_2
-    21300006: back-bar_3
+    21300000: Sprite-TableAndDrink_0
+    21300002: Sprite-TableAndDrink_1
+    21300004: Sprite-TableAndDrink_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,7 +46,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: back-bar_0
+    - name: Sprite-TableAndDrink_0
       rect:
         serializedVersion: 2
         x: 0
@@ -57,7 +56,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: back-bar_1
+    - name: Sprite-TableAndDrink_1
       rect:
         serializedVersion: 2
         x: 32
@@ -67,20 +66,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: back-bar_2
+    - name: Sprite-TableAndDrink_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: back-bar_3
-      rect:
-        serializedVersion: 2
-        x: 96
         y: 0
         width: 32
         height: 32
