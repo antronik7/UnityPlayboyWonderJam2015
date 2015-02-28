@@ -4,10 +4,11 @@ using System.Collections;
 public class ChoixPhrase : MonoBehaviour
 {
     public int PositionY = 0;
-    public string Phrase1 = "Chien",
-                  Phrase2 = "Horloge Grand-père",
-                  Phrase3 = "Hublot";
+    public string Phrase1 = "",
+                  Phrase2 = "",
+                  Phrase3 = "";
     private GUIText Texte;
+
 
     void Start()
     {
@@ -18,14 +19,18 @@ public class ChoixPhrase : MonoBehaviour
         Texte.text = Phrase1 + "\n" + Phrase2 + "\n" + Phrase3;
     }
 
-	void Update () 
+	void FixedUpdate () 
     {
         Texte.text = Phrase1 + "\n" + Phrase2 + "\n" + Phrase3;
 
         if (Input.GetAxis("Vertical") < 0 && PositionY != -2)
+        {
             PositionY--;
+        }
         else if (Input.GetAxis("Vertical") > 0 && PositionY != 0)
+        {
             PositionY++;
+        }
 
         switch (PositionY)
         {
