@@ -5,6 +5,9 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour {
 
 	public bool tourJoueur1 = true;
+    public int maxTurn = 20;
+    public int nbTurn;
+    public int degre = 0;
     public Sprite[] spritesBarStress;
     public Sprite[] spritseBarAlcool;
     public Sprite[] spritesBarMove;
@@ -15,6 +18,7 @@ public class GameManager : MonoBehaviour {
     public GameObject rectangle;
     public GameObject barMove1;
     public GameObject barMove2;
+    public GameObject aiguile;
 	public int nbrActionMaxJoueur1 = 10;
 	public int nbrActionMaxJoueur2 = 10;
     public int nbrRepetion = 6;
@@ -38,6 +42,8 @@ public class GameManager : MonoBehaviour {
 	public int personaliteRecu = 0;
     public string prenomRecu = "";
 	public GameObject boxQuestions;
+    public Font font;
+    public GUIStyle style;
 	Tests testsScript;
 	targetManager targetManagerScript;
 	tableManager tableManagerScript;
@@ -51,7 +57,29 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		testsScript = boxQuestions.GetComponent<Tests> ();
         rectangle.SetActive(false);
+        style.font = font;
+        style.fontSize = 12;
+        nbTurn = maxTurn;
+        OnGUI();
+        afficheImage();
 	}
+
+    void afficheImage()
+    {
+        StartCoroutine(doFaireImage());
+        Debug.Log("Test3");
+    }
+
+    IEnumerator doFaireImage()
+    {
+        while (Input.anyKeyDown == false)
+        {
+            yield return null;// new WaitForSeconds(2);
+            Debug.Log("Test");
+        }
+
+        Debug.Log("Test2");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -94,6 +122,8 @@ public class GameManager : MonoBehaviour {
                                 personaliteRecu = targetManagerScript.personalite;
                                 prenomRecu = targetManagerScript.prenom;
                                 nbrRepetion = 6;
+
+                                joueur1.GetComponent<Animator>().SetTrigger("hitTarget");
 
                                 phaseJeux = false;
                                 nbrActionMaxJoueur1 = 0;
@@ -150,6 +180,7 @@ public class GameManager : MonoBehaviour {
                                 personaliteRecu = targetManagerScript.personalite;
                                 prenomRecu = targetManagerScript.prenom;
                                 nbrRepetion = 6;
+                                joueur1.GetComponent<Animator>().SetTrigger("hitTarget");
 
                                 phaseJeux = false;
                                 Debug.Log(personaliteRecu);
@@ -208,6 +239,8 @@ public class GameManager : MonoBehaviour {
                                 prenomRecu = targetManagerScript.prenom;
                                 nbrRepetion = 6;
 
+                                joueur1.GetComponent<Animator>().SetTrigger("hitTarget");
+
                                 phaseJeux = false;
                                 rectangle.SetActive(true);
                                 nbrActionMaxJoueur1 = 0;
@@ -264,6 +297,8 @@ public class GameManager : MonoBehaviour {
                                 personaliteRecu = targetManagerScript.personalite;
                                 prenomRecu = targetManagerScript.prenom;
                                 nbrRepetion = 6;
+
+                                joueur1.GetComponent<Animator>().SetTrigger("hitTarget");
 
                                 phaseJeux = false;
                                 rectangle.SetActive(true);
@@ -587,6 +622,7 @@ public class GameManager : MonoBehaviour {
                 else
                 {
                     tourJoueur1 = true;
+                    horloge();
                     nbrActionMaxJoueur2 = 5;
                     barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
                 }
@@ -716,6 +752,7 @@ public class GameManager : MonoBehaviour {
                     testsScript.clearTextBox();
                     peuxAfficher = true;
                     tourJoueur1 = true;
+                    horloge();
                     phaseJeux = true;
                     rectangle.SetActive(false);
                     
@@ -747,16 +784,19 @@ public class GameManager : MonoBehaviour {
             {
                 //Perfect
                 scoreJoueur1 += 150;
+                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
             }
             else if (scoreDeLaPute == 1)
             {
                 //Tu la juste chope posey
                 scoreJoueur1 += 100;
+                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
             }
             else if ( scoreDeLaPute == -1 )
             {
                 //Elle t'as foutu un gros rateau 
                 scoreJoueur1 -= 50;
+                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
             }
         }
         else
@@ -765,19 +805,40 @@ public class GameManager : MonoBehaviour {
             {
                 //Perfect
                 scoreJoueur2 += 150;
+                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
             }
             else if (scoreDeLaPute == 1)
             {
                 //Tu la juste chope posey
                 scoreJoueur2 += 100;
+                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
             }
             else if (scoreDeLaPute == -1)
             {
                 //Elle t'as foutu un gros rateau 
                 scoreJoueur2 -= 50;
+                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
             }
 
         }
+
+        
+        OnGUI();
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(10, 10, 50, 50), "Score Joueur 1 : " + scoreJoueur1.ToString(), style);
+        GUI.Label(new Rect(Screen.width - 275, 10, 50, 50), "Score Joueur 2 : " + scoreJoueur2.ToString(), style);
+    }
+
+    void horloge()
+    {
+        Debug.Log("Horloge");
+        nbTurn--;
+        degre += (360 / maxTurn) * (-1);
+
+        aiguile.transform.localEulerAngles = new Vector3(0, 0, degre);
     }
 
 }
