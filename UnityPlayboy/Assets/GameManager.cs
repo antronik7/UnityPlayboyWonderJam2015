@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour {
         if(Input.GetKeyDown("escape"))
         {
             tourJoueur1 = !tourJoueur1;
+            horloge();
         }
 
         if (nbTurn < 1)
