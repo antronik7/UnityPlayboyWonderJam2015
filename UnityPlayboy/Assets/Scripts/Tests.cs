@@ -110,6 +110,10 @@ public class Tests : MonoBehaviour
         Phrase1 = ListeQuestion[0].question;
         Phrase2 = ListeQuestion[1].question;
         Phrase3 = ListeQuestion[2].question;
+
+        Phrase1 = MelangerChaine(Phrase1);
+        Phrase2 = MelangerChaine(Phrase2);
+        Phrase3 = MelangerChaine(Phrase3);
         switch (giveMalusByStress(valStress))
         {
             case 1:
@@ -132,6 +136,8 @@ public class Tests : MonoBehaviour
         Phrase1 = Phrase1.Insert(0, "-> ");
         Phrase2 = Phrase2.Insert(0, "   ");
         Phrase3 = Phrase3.Insert(0, "   ");
+
+
      
         Texte.fontSize = 12;
         Texte.lineSpacing = 2.7F;
@@ -208,17 +214,34 @@ public class Tests : MonoBehaviour
         Texte.text = "\t" + prenom + " " + Indice + "\n\n" + Phrase1 + "\n" + Phrase2 + "\n" + Phrase3;
     }
 
-    string MelangerChaine(string Chaine, int Stress)
+    string MelangerChaine(string Chaine)
     {
+        int Alcool = 0;
+
+        if (gameManager.GetComponent<GameManager>().tourJoueur1)
+        {
+            Alcool = gameManager.GetComponent<GameManager>().alcoholJoueur1;
+        }
+        else
+        {
+            Alcool = gameManager.GetComponent<GameManager>().alcoholJoueur2;
+        }
+
         char CaractereTemp;
         char[] TableauChar = Chaine.ToCharArray();
         int i;
 
-        for (i = 0; i < Stress; i += 2)
+        int pourcentage = (((int)(Chaine.Length * 0.03f)) * Alcool) - 2;
+        int positionRandom1;
+        int positionRandom2;
+
+        for (i = 0; i <= pourcentage; i++)
         {
-            CaractereTemp = Chaine[Stress];
-            TableauChar[Stress] = Chaine[Chaine.Length - Stress];
-            TableauChar[Chaine.Length - Stress] = CaractereTemp;
+            positionRandom1 = Random.Range(0, Chaine.Length);
+            positionRandom2 = Random.Range(0, Chaine.Length);
+            CaractereTemp = Chaine[positionRandom1];
+            TableauChar[positionRandom1] = Chaine[positionRandom2];
+            TableauChar[positionRandom2] = CaractereTemp;
             Chaine = new string(TableauChar);
         }
         return Chaine;
