@@ -139,6 +139,7 @@ public class Tests : MonoBehaviour
         Phrase1 = Phrase1.Insert(0, "-> ");
         Phrase2 = Phrase2.Insert(0, "   ");
         Phrase3 = Phrase3.Insert(0, "   ");
+        PositionY = 0;
 
 
      
@@ -152,7 +153,8 @@ public class Tests : MonoBehaviour
 
     public void gererInput(int input)
     {
-
+        Debug.Log("CALLER INPUT");
+       
         if (input == 1)
         {
             PositionY++;
@@ -181,9 +183,9 @@ public class Tests : MonoBehaviour
                     QuestionCourrante = ListeQuestion[2];
                     ValeurRetournee = QuestionCourrante.findRep(allPersonalite, PersonnaliteVal);
                     break;
-
+            
             }
-
+        
             if (ValeurRetournee != -3)
             {
                 if (PersonnaliteVal == 10)
@@ -241,6 +243,7 @@ public class Tests : MonoBehaviour
                 Phrase3 = Phrase3.Replace("   ", "-> ");
                 break;
         }
+
 
         Texte.text = "\t" + prenom + " " + Indice + "\n\n" + Phrase1 + "\n" + Phrase2 + "\n" + Phrase3;
     }

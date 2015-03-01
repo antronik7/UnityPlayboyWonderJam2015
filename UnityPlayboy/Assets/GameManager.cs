@@ -901,7 +901,7 @@ public class GameManager : MonoBehaviour {
     void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 50, 50), "Score Joueur 1 : " + scoreJoueur1.ToString(), style);
-        GUI.Label(new Rect(Screen.width - 275, 10, 50, 50), "Score Joueur 2 : " + scoreJoueur2.ToString(), style);
+        GUI.Label(new Rect(Screen.width - 260, 10, 50, 50), "Score Joueur 2 : " + scoreJoueur2.ToString(), style);
     }
 
     void horloge()
