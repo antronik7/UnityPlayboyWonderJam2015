@@ -17,15 +17,18 @@ public class CameraController : MonoBehaviour {
 		Smoothing.y = 2;
 		gameManager = GameObject.Find("GameManager");
 		gameManagerScript = gameManager.GetComponent<GameManager>();
+
+        Player = joueur1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameManagerScript.tourJoueur1) {
-			Player = joueur1;
+		
+        if (gameManagerScript.tourJoueur1) {
+            StartCoroutine(changeToPlayer1());
 		} 
 		else {
-			Player = joueur2;
+            StartCoroutine(changeToPlayer2());
 		}
 		var x = transform.position.x;
 		var y = transform.position.y;
@@ -35,4 +38,16 @@ public class CameraController : MonoBehaviour {
 
 		transform.position = new Vector3 (x, y, transform.position.z);
 	}
+
+    IEnumerator changeToPlayer1()
+    {
+        yield return new WaitForSeconds(1);
+        Player = joueur1;
+    }
+
+    IEnumerator changeToPlayer2()
+    {
+        yield return new WaitForSeconds(1);
+        Player = joueur2;
+    }
 }

@@ -67,7 +67,6 @@ public class GameManager : MonoBehaviour {
     void afficheImage()
     {
         StartCoroutine(doFaireImage());
-        Debug.Log("Test3");
     }
 
     IEnumerator doFaireImage()
@@ -75,10 +74,7 @@ public class GameManager : MonoBehaviour {
         while (Input.anyKeyDown == false)
         {
             yield return null;// new WaitForSeconds(2);
-            Debug.Log("Test");
         }
-
-        Debug.Log("Test2");
     }
 	
 	// Update is called once per frame
@@ -112,6 +108,8 @@ public class GameManager : MonoBehaviour {
                                 joueur1.transform.position = new Vector2(joueur1.transform.position.x, joueur1.transform.position.y + 1);
 
                                 nbrActionMaxJoueur1--;
+                                if (nbrActionMaxJoueur1 <= 0)
+                                    nbrActionMaxJoueur1 = 0;
                                 barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
 
                             }
@@ -126,6 +124,7 @@ public class GameManager : MonoBehaviour {
                                 joueur1.GetComponent<Animator>().SetTrigger("hitTarget");
 
                                 phaseJeux = false;
+                                rectangle.SetActive(true);
                                 nbrActionMaxJoueur1 = 0;
                                 barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
                             }
@@ -146,6 +145,8 @@ public class GameManager : MonoBehaviour {
                                         barStress1.GetComponent<SpriteRenderer>().sprite = spritesBarStress[joueur1Stress];
                                         barAlcool1.GetComponent<SpriteRenderer>().sprite = spritseBarAlcool[alcoholJoueur1];
                                         nbrActionMaxJoueur1--;
+                                        if (nbrActionMaxJoueur1 <= 0)
+                                            nbrActionMaxJoueur1 = 0;
                                         barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
                                     }
                                 }
@@ -170,11 +171,12 @@ public class GameManager : MonoBehaviour {
                             {
                                 joueur1.transform.position = new Vector2(joueur1.transform.position.x, joueur1.transform.position.y - 1);
                                 nbrActionMaxJoueur1--;
+                                if (nbrActionMaxJoueur1 <= 0)
+                                    nbrActionMaxJoueur1 = 0;
                                 barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
                             }
                             else if (hit.collider.tag == "Target")
                             {
-                                Debug.Log(hit.collider.name);
                                 targetManagerScript = hit.collider.GetComponent<targetManager>();
                                 targetManagerScript.scoreJoueur = 0;
                                 personaliteRecu = targetManagerScript.personalite;
@@ -183,7 +185,7 @@ public class GameManager : MonoBehaviour {
                                 joueur1.GetComponent<Animator>().SetTrigger("hitTarget");
 
                                 phaseJeux = false;
-                                Debug.Log(personaliteRecu);
+                                rectangle.SetActive(true);
                                 nbrActionMaxJoueur1 = 0;
                                 barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
                             }
@@ -205,6 +207,8 @@ public class GameManager : MonoBehaviour {
                                         barAlcool1.GetComponent<SpriteRenderer>().sprite = spritseBarAlcool[alcoholJoueur1];
                                         Debug.Log(alcoholJoueur1);
                                         nbrActionMaxJoueur1--;
+                                        if (nbrActionMaxJoueur1 <= 0)
+                                            nbrActionMaxJoueur1 = 0;
                                         barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
                                     }
                                 }
@@ -229,6 +233,8 @@ public class GameManager : MonoBehaviour {
                             {
                                 joueur1.transform.position = new Vector2(joueur1.transform.position.x + 1, joueur1.transform.position.y);
                                 nbrActionMaxJoueur1--;
+                                if (nbrActionMaxJoueur1 <= 0)
+                                    nbrActionMaxJoueur1 = 0;
                                 barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
                             }
                             else if (hit.collider.tag == "Target")
@@ -262,8 +268,9 @@ public class GameManager : MonoBehaviour {
 
                                         barStress1.GetComponent<SpriteRenderer>().sprite = spritesBarStress[joueur1Stress];
                                         barAlcool1.GetComponent<SpriteRenderer>().sprite = spritseBarAlcool[alcoholJoueur1];
-                                        Debug.Log(alcoholJoueur1);
                                         nbrActionMaxJoueur1--;
+                                        if (nbrActionMaxJoueur1 <= 0)
+                                            nbrActionMaxJoueur1 = 0;
                                         barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
                                     }
                                 }
@@ -288,6 +295,8 @@ public class GameManager : MonoBehaviour {
                             {
                                 joueur1.transform.position = new Vector2(joueur1.transform.position.x - 1, joueur1.transform.position.y);
                                 nbrActionMaxJoueur1--;
+                                if (nbrActionMaxJoueur1 <= 0)
+                                    nbrActionMaxJoueur1 = 0;
                                 barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
                             }
                             else if (hit.collider.tag == "Target")
@@ -321,8 +330,9 @@ public class GameManager : MonoBehaviour {
 
                                         barStress1.GetComponent<SpriteRenderer>().sprite = spritesBarStress[joueur1Stress];
                                         barAlcool1.GetComponent<SpriteRenderer>().sprite = spritseBarAlcool[alcoholJoueur1];
-                                        Debug.Log(alcoholJoueur1);
                                         nbrActionMaxJoueur1--;
+                                        if (nbrActionMaxJoueur1 <= 0)
+                                            nbrActionMaxJoueur1 = 0;
                                         barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
                                     }
                                 }
@@ -366,13 +376,14 @@ public class GameManager : MonoBehaviour {
                                     {
                                         joueur2.transform.position = new Vector2(joueur2.transform.position.x + 1, joueur2.transform.position.y);
                                         nbrActionMaxJoueur2--;
+                                        if (nbrActionMaxJoueur2 <= 0)
+                                            nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
                                         joystickInUse = true;
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
-                                        Debug.Log(hit.collider.name);
                                         targetManagerScript = hit.collider.GetComponent<targetManager>();
                                         targetManagerScript.scoreJoueur = 0;
                                         personaliteRecu = targetManagerScript.personalite;
@@ -384,7 +395,6 @@ public class GameManager : MonoBehaviour {
 
                                         barStress2.GetComponent<SpriteRenderer>().sprite = spritesBarStress[joueur2Stress];
                                         barAlcool2.GetComponent<SpriteRenderer>().sprite = spritseBarAlcool[alcoholJoueur2];
-                                        Debug.Log(personaliteRecu);
                                         nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
                                     }
@@ -401,8 +411,9 @@ public class GameManager : MonoBehaviour {
                                                 joueur2Stress -= drinkBeer_giveDelta();
                                                 if (joueur2Stress <= 0)
                                                     joueur2Stress = 0;
-                                                Debug.Log(alcoholJoueur2);
                                                 nbrActionMaxJoueur2--;
+                                                if (nbrActionMaxJoueur2 <= 0)
+                                                    nbrActionMaxJoueur2 = 0;
                                                 barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
                                                 joystickInUse = true;
@@ -432,13 +443,14 @@ public class GameManager : MonoBehaviour {
                                     {
                                         joueur2.transform.position = new Vector2(joueur2.transform.position.x - 1, joueur2.transform.position.y);
                                         nbrActionMaxJoueur2--;
+                                        if (nbrActionMaxJoueur2 <= 0)
+                                            nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
                                         joystickInUse = true;
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
-                                        Debug.Log(hit.collider.name);
                                         targetManagerScript = hit.collider.GetComponent<targetManager>();
                                         targetManagerScript.scoreJoueur = 0;
                                         personaliteRecu = targetManagerScript.personalite;
@@ -447,7 +459,6 @@ public class GameManager : MonoBehaviour {
 
                                         phaseJeux = false;
                                         rectangle.SetActive(true);
-                                        Debug.Log(personaliteRecu);
                                         nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
                                     }
@@ -467,8 +478,9 @@ public class GameManager : MonoBehaviour {
 
                                                 barStress2.GetComponent<SpriteRenderer>().sprite = spritesBarStress[joueur2Stress];
                                                 barAlcool2.GetComponent<SpriteRenderer>().sprite = spritseBarAlcool[alcoholJoueur2];
-                                                Debug.Log(alcoholJoueur1);
                                                 nbrActionMaxJoueur2--;
+                                                if (nbrActionMaxJoueur2 <= 0)
+                                                    nbrActionMaxJoueur2 = 0;
                                                 barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
                                                 joystickInUse = true;
@@ -498,13 +510,14 @@ public class GameManager : MonoBehaviour {
                                     {
                                         joueur2.transform.position = new Vector2(joueur2.transform.position.x, joueur2.transform.position.y + 1);
                                         nbrActionMaxJoueur2--;
+                                        if (nbrActionMaxJoueur2 <= 0)
+                                            nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
                                         joystickInUse = true;
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
-                                        Debug.Log(hit.collider.name);
                                         targetManagerScript = hit.collider.GetComponent<targetManager>();
                                         targetManagerScript.scoreJoueur = 0;
                                         personaliteRecu = targetManagerScript.personalite;
@@ -513,8 +526,9 @@ public class GameManager : MonoBehaviour {
 
                                         phaseJeux = false;
                                         rectangle.SetActive(true);
-                                        Debug.Log(personaliteRecu);
                                         nbrActionMaxJoueur2 = 0;
+                                        if (nbrActionMaxJoueur2 <= 0)
+                                            nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
                                     }
                                     else if (hit.collider.tag == "Table")
@@ -534,8 +548,9 @@ public class GameManager : MonoBehaviour {
 
                                                 barStress2.GetComponent<SpriteRenderer>().sprite = spritesBarStress[joueur2Stress];
                                                 barAlcool2.GetComponent<SpriteRenderer>().sprite = spritseBarAlcool[alcoholJoueur2];
-                                                Debug.Log(alcoholJoueur1);
                                                 nbrActionMaxJoueur2--;
+                                                if (nbrActionMaxJoueur2 <= 0)
+                                                    nbrActionMaxJoueur2 = 0;
                                                 barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
                                                 joystickInUse = true;
@@ -565,13 +580,14 @@ public class GameManager : MonoBehaviour {
                                     {
                                         joueur2.transform.position = new Vector2(joueur2.transform.position.x, joueur2.transform.position.y - 1);
                                         nbrActionMaxJoueur2--;
+                                        if (nbrActionMaxJoueur2 <= 0)
+                                            nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
                                         joystickInUse = true;
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
-                                        Debug.Log(hit.collider.name);
                                         targetManagerScript = hit.collider.GetComponent<targetManager>();
                                         targetManagerScript.scoreJoueur = 0;
                                         personaliteRecu = targetManagerScript.personalite;
@@ -580,8 +596,9 @@ public class GameManager : MonoBehaviour {
 
                                         phaseJeux = false;
                                         rectangle.SetActive(true);
-                                        Debug.Log(personaliteRecu);
                                         nbrActionMaxJoueur2 = 0;
+                                        if (nbrActionMaxJoueur2 <= 0)
+                                            nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
                                     }
                                     else if (hit.collider.tag == "Table")
@@ -601,8 +618,9 @@ public class GameManager : MonoBehaviour {
 
                                                 barStress2.GetComponent<SpriteRenderer>().sprite = spritesBarStress[joueur2Stress];
                                                 barAlcool2.GetComponent<SpriteRenderer>().sprite = spritseBarAlcool[alcoholJoueur2];
-                                                Debug.Log(alcoholJoueur2);
                                                 nbrActionMaxJoueur2--;
+                                                if (nbrActionMaxJoueur2 <= 0)
+                                                    nbrActionMaxJoueur2 = 0;
                                                 barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
                                                 joystickInUse = true;
@@ -633,9 +651,7 @@ public class GameManager : MonoBehaviour {
         {
             float horizontal = 0;
             float vertical = 0;
-
-            Debug.Log(peuxAfficher);
-
+            
             if (peuxAfficher)
             {
                 testsScript.afficherTexte();
@@ -689,9 +705,9 @@ public class GameManager : MonoBehaviour {
                 {
                     addScoreToPlayer(targetManagerScript.getFinalScore(), tourJoueur1);
                     testsScript.clearTextBox();
-                    Debug.Log(targetManagerScript.scoreJoueur);
                     peuxAfficher = true;
                     tourJoueur1 = false;
+                    nbrActionMaxJoueur1 = 5;
                     phaseJeux = true;
                     rectangle.SetActive(false);
                 }
@@ -752,6 +768,7 @@ public class GameManager : MonoBehaviour {
                     testsScript.clearTextBox();
                     peuxAfficher = true;
                     tourJoueur1 = true;
+                    nbrActionMaxJoueur2 = 5;
                     horloge();
                     phaseJeux = true;
                     rectangle.SetActive(false);
@@ -759,16 +776,6 @@ public class GameManager : MonoBehaviour {
                 }
             }
         }
-	}
-
-	void FixedUpdate()
-	{
-
-	}
-
-	IEnumerator Wait ()
-	{
-		yield return new WaitForSeconds(10);
 	}
 
     public int drinkBeer_giveDelta() 
@@ -784,19 +791,19 @@ public class GameManager : MonoBehaviour {
             {
                 //Perfect
                 scoreJoueur1 += 150;
-                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
+                StartCoroutine(waitBeforeGo());
             }
             else if (scoreDeLaPute == 1)
             {
                 //Tu la juste chope posey
                 scoreJoueur1 += 100;
-                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
+                StartCoroutine(waitBeforeGo());
             }
             else if ( scoreDeLaPute == -1 )
             {
                 //Elle t'as foutu un gros rateau 
                 scoreJoueur1 -= 50;
-                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
+                StartCoroutine(waitBeforeGo());
             }
         }
         else
@@ -805,25 +812,30 @@ public class GameManager : MonoBehaviour {
             {
                 //Perfect
                 scoreJoueur2 += 150;
-                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
+                StartCoroutine(waitBeforeGo());
             }
             else if (scoreDeLaPute == 1)
             {
                 //Tu la juste chope posey
                 scoreJoueur2 += 100;
-                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
+                StartCoroutine(waitBeforeGo());
             }
             else if (scoreDeLaPute == -1)
             {
                 //Elle t'as foutu un gros rateau 
                 scoreJoueur2 -= 50;
-                hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
+                StartCoroutine(waitBeforeGo());
             }
 
         }
 
-        
         OnGUI();
+    }
+
+    IEnumerator waitBeforeGo()
+    {
+        yield return new WaitForSeconds(1);
+        hit.collider.GetComponent<Transform>().position = new Vector3(100, 100, 100);
     }
 
     void OnGUI()
