@@ -10,13 +10,9 @@ public class targetManager : MonoBehaviour {
     public string prenom;
 	// Use this for initialization
 	void Start () {
-		personalite = Random.Range (0, 10);
+        if(personalite != 10)
+		    personalite = Random.Range (0, 10);
         prenom = prenoms[Random.Range(0, prenoms.Length)];
-	}
-
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
     public void addToPersonalScore( int val ) 
