@@ -152,6 +152,7 @@ public class Tests : MonoBehaviour
 
     public void gererInput(int input)
     {
+
         if (input == 1)
         {
             PositionY++;
