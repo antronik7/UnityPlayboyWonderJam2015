@@ -61,7 +61,25 @@ public class GameManager : MonoBehaviour {
         style.fontSize = 12;
         nbTurn = maxTurn;
         OnGUI();
+        afficheImage();
 	}
+
+    void afficheImage()
+    {
+        StartCoroutine(doFaireImage());
+        Debug.Log("Test3");
+    }
+
+    IEnumerator doFaireImage()
+    {
+        while (Input.anyKeyDown == false)
+        {
+            yield return null;// new WaitForSeconds(2);
+            Debug.Log("Test");
+        }
+
+        Debug.Log("Test2");
+    }
 	
 	// Update is called once per frame
 	void Update () {
