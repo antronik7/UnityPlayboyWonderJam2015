@@ -30,7 +30,7 @@ public class QuestionClass {
 	public int findRep(string[,] TabPersonalite , int valOfMeuf )
 		{
 			var i = 1;
-			while ( this.tague != TabPersonalite[ valOfMeuf , i] ) // cherche le tag dans le tableau
+			while ( this.tague != TabPersonalite[ valOfMeuf , i] || i > TabPersonalite.Length ) // cherche le tag dans le tableau
 			{
 				i++;
 			}
@@ -57,11 +57,11 @@ public class QuestionClass {
 			switch (val)
 			{
 			case 1 : 
-				return RepAime;
-			case 0 : 
-				return RepNeutre;
-			case -1 : 
-				return RepAimePas;
+				return "\t"+RepAime;
+			case 0 :
+                return "\t" + RepNeutre;
+			case -1 :
+                return "\t" + RepAimePas;
 			default :
 				return "MarchePas";
 			}

@@ -9,28 +9,35 @@ using System.IO;
 public class Tests : MonoBehaviour
 {
 
-    public string[,] allPersonalite = new string[10, 10] { { "Aime beaucoup sa maman", "Reserve" , "Animaux" , "Quotidien", "Pickup", "Religieux", "Social", "Rude", "Ose", "Desespere"}, 
-		{ "A toujours été le dernier choisi", "Desespere" , "Religieux", "Reserve", "Quotidien", "Animaux", "Pickup", "Rude", "Ose", "Social" },
-		{ "Sort dans les bars tous les soirs", "Pickup" , "Ose", "Social", "Rude", "Quotidien", "Religieux", "Reserve", "Desespere", "Animaux"}, 
-		{ "Est tout à fait normal", "Social" , "Quotidien", "Reserve", "Pickup", "Desespere", "Ose", "Religieux", "Rude", "Animaux"},
-		{ "Aime les nuits torrides", "Rude" , "Pickup", "Ose", "Animaux", "Reserve", "Social", "Desespere", "Quotidien", "Religieux"},
-		{ "Est un régulier de la messe du dimanche", "Religieux" , "Quotidien", "Social", "Animaux", "Reserve", "Desespere", "Pickup", "Ose", "Rude"},
-		{ "Est comparable au lion", "Animaux" , "Rude", "Pickup", "Religieux", "Ose", "Social", "Reserve", "Desespere", "Quotidien"},
-		{ "N'aime pas ce que lui renvoie le miroir", "Social" , "Desespere", "Rude", "Quotidien", "Reserve", "Ose", "Pickup", "Religieux", "Animaux"},	
-		{ "S'excite de maniere etrange", "Desespere" , "Religieux", "Ose", "Animaux", "Pickup", "Rude", "Quotidien", "Reserve", "Social"},
-		{ "A des gouts particuliers", "Animaux" , "Ose", "Reserve", "Desespere", "Rude", "Religieux", "Pickup", "Social", "Quotidien"}};
+    public string[,] allPersonalite = new string[10, 10] { { "aime beaucoup sa maman", "Reserve" , "Animaux" , "Quotidien", "Pickup", "Religieux", "Social", "Rude", "Ose", "Desespere"}, 
+		{ "a toujours été le dernier choisi", "Desespere" , "Religieux", "Reserve", "Quotidien", "Animaux", "Pickup", "Rude", "Ose", "Social" },
+		{ "sort dans les bars tous les soirs", "Pickup" , "Ose", "Social", "Rude", "Quotidien", "Religieux", "Reserve", "Desespere", "Animaux"}, 
+		{ "est tout à fait normal", "Social" , "Quotidien", "Reserve", "Pickup", "Desespere", "Ose", "Religieux", "Rude", "Animaux"},
+		{ "aime les nuits torrides", "Rude" , "Pickup", "Ose", "Animaux", "Reserve", "Social", "Desespere", "Quotidien", "Religieux"},
+		{ "est un régulier de la messe du dimanche", "Religieux" , "Quotidien", "Social", "Animaux", "Reserve", "Desespere", "Pickup", "Ose", "Rude"},
+		{ "est comparable au lion", "Animaux" , "Rude", "Pickup", "Religieux", "Ose", "Social", "Reserve", "Desespere", "Quotidien"},
+		{ "n'aime pas ce que lui renvoie le miroir", "Social" , "Desespere", "Rude", "Quotidien", "Reserve", "Ose", "Pickup", "Religieux", "Animaux"},	
+		{ "s'excite de maniere etrange", "Desespere" , "Religieux", "Ose", "Animaux", "Pickup", "Rude", "Quotidien", "Reserve", "Social"},
+		{ "a des gouts particuliers", "Animaux" , "Ose", "Reserve", "Desespere", "Rude", "Religieux", "Pickup", "Social", "Quotidien"}};
 
+   
 
     private GUIText Texte;
+    public Animator animator;
     public List<QuestionClass> ListeQuestion;
     public List<int> ListeId;
     public creerTableau creerTableauScript;
     public QuestionClass QuestionCourrante;
+    public int valStress = 0;
+    public int valAlcool = 0;
+    public int limiteCap = -2;
+    public string prenom;
 
 	public GameObject gameManager;
 
 
     public bool BonneReponse = false;
+    public bool ajouterStress = false;
     public int Nombre,
                i,
                j = 0,
@@ -44,14 +51,30 @@ public class Tests : MonoBehaviour
                   Phrase3,
                   VariableTampon;
     
-    public void Start()
+    void Start()
     {
-        
-   		PersonnaliteVal = gameManager.GetComponent<GameManager>().personaliteRecu;
-		Debug.Log (PersonnaliteVal);
-       creerTableauScript = gameManager.GetComponent<creerTableau>();
-       QuestionClass[] qTab = creerTableauScript.GetQuestions();
+        //animator = GetComponent<Animator>();
+    }
+
+    public void afficherTexte()
+    {
+        ListeQuestion.Clear();
+        ListeId.Clear();
+       
+        if (gameManager.GetComponent<GameManager>().tourJoueur1)
+        {
+            valStress = gameManager.GetComponent<GameManager>().joueur1Stress;
+        }
+        else
+        {
+            valStress = gameManager.GetComponent<GameManager>().joueur2Stress;
+        }
+        prenom = gameManager.GetComponent<GameManager>().prenomRecu;
+        PersonnaliteVal = gameManager.GetComponent<GameManager>().personaliteRecu;
+        creerTableauScript = gameManager.GetComponent<creerTableau>();
+        QuestionClass[] qTab = creerTableauScript.GetQuestions();
         Texte = GetComponent<GUIText>();
+        limiteCap = -2;
 
         for (i = 0; i < 3; i++)
         {
@@ -61,15 +84,11 @@ public class Tests : MonoBehaviour
                 if (qTab[Nombre].findRep(allPersonalite, PersonnaliteVal) == 1)
                 {
                     BonneReponse = true;
-                    Debug.Log(qTab[Nombre].question);
                 }
-                   
-                
             }
-            
-            while(ListeId.Contains(Nombre))
+
+            while (ListeId.Contains(Nombre))
                 Nombre = Random.Range(0, qTab.Length);
-           
             ListeId.Add(Nombre);
             ListeQuestion.Add(qTab[Nombre]);
         }
@@ -85,55 +104,88 @@ public class Tests : MonoBehaviour
                 ListeQuestion[i] = tmpSHit;
             }
         }
-    }
 
-    void Update()
-    {
+        Indice = allPersonalite[PersonnaliteVal, 0];
+               
+        Phrase1 = ListeQuestion[0].question;
+        Phrase2 = ListeQuestion[1].question;
+        Phrase3 = ListeQuestion[2].question;
+        switch (giveMalusByStress(valStress))
+        {
+            case 1:
+                Phrase3 = "";
+                limiteCap = -1;
+                break;
+            case 0:
+                break;
+            case -1:
+                Phrase2 = "";
+                Phrase3 = "";
+                limiteCap = 0;
+                break;
+            default:
+                Debug.Log("PROBLEME DANS LE SWITCH");
+                break;
+        }
 
-            //Ajustement des 3 lignes (ajout d'espaces devant et modification de la fontSize si besoin)
-            if (j == 0)
-            {
-                Indice = allPersonalite[PersonnaliteVal, 0];
-                Phrase1 = ListeQuestion[0].question;
-                Phrase2 = ListeQuestion[1].question;
-                Phrase3 = ListeQuestion[2].question;
 
-                Phrase1 = Phrase1.Insert(0, "   ");
-                Phrase2 = Phrase2.Insert(0, "   ");
-                Phrase3 = Phrase3.Insert(0, "   ");
-                if (Phrase1.Length > 49 || Phrase2.Length > 49 || Phrase3.Length > 49)
-                {
-                    Texte.fontSize = 15;
-                    Texte.lineSpacing = 2;
-                }
-
-                if (Phrase1.Length > 76 || Phrase2.Length > 76 || Phrase3.Length > 76)
-                {
-                    Texte.fontSize = 13;
-                    Texte.lineSpacing = 2.7F;
-                }
-                j++;
-            }
-            //Phrase1 = MelangerChaine(Phrase1, 10);
+        Phrase1 = Phrase1.Insert(0, "-> ");
+        Phrase2 = Phrase2.Insert(0, "   ");
+        Phrase3 = Phrase3.Insert(0, "   ");
+     
+        Texte.fontSize = 12;
+        Texte.lineSpacing = 2.7F;
         
+
+        Texte.text = "\t"+ prenom +" "+ Indice + "\n\n" + Phrase1 + "\n" + Phrase2 + "\n" + Phrase3;
+        Texte.transform.position = new Vector3(0.12f, 0.23f, 0);
     }
 
-    void FixedUpdate()
+    public void gererInput(int input)
     {
-        Texte.text = "\t\t\t\t\t\t\t\t\tRobert " + Indice + "\n\n" + Phrase1 + "\n" + Phrase2 + "\n" + Phrase3;
-
-        /*if (Input.GetAxis("Vertical") > 0.0F && PositionY != -2)
-            PositionY--;
-
-        else if (Input.GetAxis("Vertical") < 0.0F && PositionY != 0)
-            PositionY++;*/
-        if (Input.GetKeyDown("down") && PositionY != -2)
-            PositionY--;
-
-        else if (Input.GetKeyDown("up") && PositionY != 0)
+        if (input == 1)
+        {
             PositionY++;
+            if (PositionY >= 0)
+                PositionY = 0;
+        }
+        else if (input == 2)
+        {
+            PositionY--;
+            if (PositionY <= limiteCap)
+                PositionY = limiteCap;
+        }
+        else
+        {
+            switch (PositionY)
+            {
+                case 0:
+                    QuestionCourrante = ListeQuestion[0];
+                    ValeurRetournee = QuestionCourrante.findRep(allPersonalite, PersonnaliteVal);
+                    break;
+                case -1:
+                    QuestionCourrante = ListeQuestion[1];
+                    ValeurRetournee = QuestionCourrante.findRep(allPersonalite, PersonnaliteVal);
+                    break;
+                case -2:
+                    QuestionCourrante = ListeQuestion[2];
+                    ValeurRetournee = QuestionCourrante.findRep(allPersonalite, PersonnaliteVal);
+                    break;
 
-        //Changement de position de la flèche 
+            }
+
+            if (ValeurRetournee != -3)
+            {
+
+                Phrase1 = Phrase3 = "";
+                Phrase2 = QuestionCourrante.giveRep(ValeurRetournee);
+                if (ValeurRetournee == -1)
+                {
+                    ajouterStress = true;
+                }
+            }
+        }
+
         switch (PositionY)
         {
             case 0:
@@ -142,42 +194,18 @@ public class Tests : MonoBehaviour
                 Phrase3 = Phrase3.Replace("-> ", "   ");
                 break;
             case -1:
-                Phrase2 = Phrase2.Replace("   ", "-> ");
                 Phrase1 = Phrase1.Replace("-> ", "   ");
+                Phrase2 = Phrase2.Replace("   ", "-> ");
                 Phrase3 = Phrase3.Replace("-> ", "   ");
                 break;
             case -2:
-                Phrase3 = Phrase3.Replace("   ", "-> ");
-                Phrase2 = Phrase2.Replace("-> ", "   ");
                 Phrase1 = Phrase1.Replace("-> ", "   ");
+                Phrase2 = Phrase2.Replace("-> ", "   ");
+                Phrase3 = Phrase3.Replace("   ", "-> ");
                 break;
         }
 
-
-        //Ablation de la flèche pour l'output si le bouton de confirmation est appuyé
-        if (Input.GetKeyDown("space"))
-            switch (PositionY)
-            {
-                case 0:
-                    QuestionCourrante = ListeQuestion[0];
-                    ValeurRetournee = QuestionCourrante.findRep(allPersonalite,PersonnaliteVal);
-                    break;
-                case -1:
-                    QuestionCourrante = ListeQuestion[1];
-                    ValeurRetournee = QuestionCourrante.findRep(allPersonalite,PersonnaliteVal);
-                    break;
-                case -2:
-                    QuestionCourrante = ListeQuestion[2];
-                    ValeurRetournee = QuestionCourrante.findRep(allPersonalite,PersonnaliteVal);
-                    break;
-                    
-            }
-        if (ValeurRetournee != -3)
-        {
-
-            Phrase1 = Phrase3 = "";
-            Phrase2 = QuestionCourrante.giveRep(ValeurRetournee);
-        }
+        Texte.text = "\t" + prenom + " " + Indice + "\n\n" + Phrase1 + "\n" + Phrase2 + "\n" + Phrase3;
     }
 
     string MelangerChaine(string Chaine, int Stress)
@@ -195,5 +223,98 @@ public class Tests : MonoBehaviour
         }
         return Chaine;
     }
+
+    public void clearTextBox() {
+        Texte.text = "";
+    }
+
+    public int giveMalusByStress( int stressValue ) //valeur sur 10
+{
+	int nombre = Random.Range(0 , 101);
+	switch(stressValue)
+	{
+		case 0 :
+			return 0;
+		case 1 :
+            if (nombre < 2)
+                return 1;
+            else
+                return 0;
+		case 2:
+		if(nombre < 4)
+			return 1;
+		else 
+			return 0;
+		case 3 : 
+		if(nombre < 8)
+			return 1;
+		else 
+			return 0;
+		case 4 : 
+		if(nombre < 16)
+			return 1;
+		else 
+			return 0;
+		case 5 :
+		if(nombre < 32)
+			return 1;
+		else 
+			return 0;
+		case 6 :
+		if(nombre < 64)
+			return 1;
+		else 
+			return 0;
+		case 7 :
+		if(nombre < 75)
+			return 1;
+		else 
+			return 0;
+		case 8 :
+		if(nombre < 85)
+			return 1;
+		else 
+			return 0;
+		case 9 :
+		if (nombre < 51)
+			return 1;
+		else 
+			return -1;
+		case 10 : 
+			return -1;
+        default :
+            return -6;
+
+	}
+}
+
+    public int addToStressValue()
+{
+	
+    if (ajouterStress)
+    {
+        ajouterStress = false;
+        return 2;
+    }
+
+    ajouterStress = false;
+    return 0;
+ }
+
+    public int giveScore ( int val ) 
+{
+	switch(val)
+	{
+		case 1 :
+			return 2;
+		case 0 :
+			return 0;
+		case -1 : 
+			return -1;
+        default:
+            return -6;
+	}
+}
+
     
 }
