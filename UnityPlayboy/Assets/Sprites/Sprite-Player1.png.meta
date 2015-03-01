@@ -47,7 +47,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: 
+    - name: Sprite-Player1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -57,7 +57,7 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: 
+    - name: Sprite-Player1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -67,7 +67,7 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: 
+    - name: Sprite-Player1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -77,7 +77,7 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: 
+    - name: Sprite-Player1_3
       rect:
         serializedVersion: 2
         x: 96
