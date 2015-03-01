@@ -92,6 +92,22 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(Input.GetKeyDown("escape"))
+        {
+            tourJoueur1 = !tourJoueur1;
+        }
+
+        if (nbTurn < 1)
+        {
+            if (scoreJoueur1 > scoreJoueur2)
+            {
+                Application.LoadLevel("Player1Win");
+            }
+            else
+            {
+                Application.LoadLevel("Player2Win");
+            }
+        }
 
         if (phaseJeux)
         {

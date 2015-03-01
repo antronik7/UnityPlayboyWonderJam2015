@@ -13,7 +13,7 @@
 		<tag name="tag">Ose</tag>
 		<r1 name="r1">C'est normal, je dégage beaucoup!</r1>
 		<r2 name="r2">Eh bien, si tu veux je te commande un verre d'eau</r2>
-		<r3 name="r3">Dommages que tu refroidisse l'ambiance</r3>	
+		<r3 name="r3">Dommages que tu refroidisses l'ambiance</r3>	
 	</question>
 	
 	<question>
@@ -73,7 +73,7 @@
 	</question>
 
 	<question>
-		<q name="q">Est-ce que je peut te payer un verre?</q>
+		<q name="q">Est-ce que je peux te payer un verre?</q>
 		<tag name="tag">Reserve</tag>
 		<r1 name="r1">Oui, bien sur!</r1>
 		<r2 name="r2">Ah, j'ai pas encore terminé ma bierre.</r2>
@@ -101,7 +101,7 @@
 		<tag name="tag">Quotidien</tag>
 		<r1 name="r1">Oui, les arbres sont en fleur!</r1>
 		<r2 name="r2">Je ne sais pas moi, il fait combien dehors?</r2>
-		<r3 name="r3">Sa doit être mieux que ta face!</r3>	
+		<r3 name="r3">Ça doit être mieux que ta face!</r3>	
 	</question>
 
 	<question>
@@ -125,7 +125,7 @@
 		<tag name="tag">Quotidien</tag>
 		<r1 name="r1">Très bien, merci et toi.</r1>
 		<r2 name="r2">Comme un lundi.</r2>
-		<r3 name="r3">Sa pourrait aller mieux pour l'instant.</r3>
+		<r3 name="r3">Ça pourrait aller mieux pour l'instant.</r3>
 	</question>
 
 	<question>
@@ -187,7 +187,7 @@
 	<question>
 		<q name="q">J'ai toujours rêvé d'avoir un cheval!</q>
 		<tag name="tag">Animaux</tag>
-		<r1 name="r1">Moi aussi! sa ou une licorne.</r1>
+		<r1 name="r1">Moi aussi! ça ou une licorne.</r1>
 		<r2 name="r2">Ah bon.</r2>
 		<r3 name="r3">Je pourrais utiliser un cheval pour m'enfuir de cette conversation.</r3>
 	</question>
@@ -246,7 +246,7 @@
 		<tag name="tag">Pickup</tag>
 		<r1 name="r1">Le voici : 555-5555</r1>
 		<r2 name="r2">on va commencer juste par mon indicatif régional.</r2>
-		<r3 name="r3">Fait voir ton cellulaire... non, tout est très bien comme sa.</r3>	
+		<r3 name="r3">Fais voir ton cellulaire... non, tout est très bien comme sa.</r3>	
 	</question>
 
 	<question>
@@ -270,29 +270,29 @@
 		<tag name="tag">Pickup</tag>
 		<r1 name="r1">Oui, je connais justement une bonne place en ville, mon appartement.</r1>
 		<r2 name="r2">J'aime mieux la pizza.</r2>
-		<r3 name="r3">Non, sa me dit rien qui vaille.</r3>	
+		<r3 name="r3">Non, ça me dit rien qui vaille.</r3>	
 	</question>
 
 	<question>
-		<q name="q">Dis, est-ce que tu embrasse des inconnus? Non? Donc je me présente...</q>
+		<q name="q">Dis, est-ce que tu embrasses des inconnus? Non? Donc je me présente...</q>
 		<tag name="tag">Pickup</tag>
 		<r1 name="r1">Enchanté de faire votre connaissance!</r1>
-		<r2 name="r2">Bof, même là, tu as tu travailles à faire.</r2>
-		<r3 name="r3">Ouf, t'avais plus de chance avant de te présenté.</r3>	
+		<r2 name="r2">Bof, même là, tu as du travail à faire.</r2>
+		<r3 name="r3">Ouf, t'avais plus de chance avant de te présenter.</r3>	
 	</question>
 
 	<question>
-		<q name="q">Est-ce que tu dors sur ton ventre? Si non, est-ce que tu me le permet?</q>
+		<q name="q">Est-ce que tu dors sur ton ventre? Si non, est-ce que tu me le permets?</q>
 		<tag name="tag">Pickup</tag>
 		<r1 name="r1">Haha, ouais, c'est une idée!</r1>
 		<r2 name="r2">Je dors sur le côté.</r2>
-		<r3 name="r3">Je ne dors pas avec les naz dans ton genre.</r3>	
+		<r3 name="r3">Je ne dors pas avec les nazes dans ton genre.</r3>	
 	</question>	
 
 	<question>
 		<q name="q">Voudrais-tu sortir avec moi ce soir? S'il te plaaaiiiit...</q>
 		<tag name="tag">Desespere</tag>
-		<r1 name="r1">Ouais, sa peut s'envisager.</r1>
+		<r1 name="r1">Ouais, ça peut s'envisager.</r1>
 		<r2 name="r2">Euh, non.</r2>
 		<r3 name="r3">Va te faire foutre (par quelqu'un d'autre).</r3>	
 	</question>
@@ -308,7 +308,7 @@
 	<question>
 		<q name="q">Écoutes, j'ai perdu un pari et je dois venir te parler...</q>
 		<tag name="tag">Desespere</tag>
-		<r1 name="r1">Ah super, j'était sur le point de croire que j'existe pas.</r1>
+		<r1 name="r1">Ah super, j'étais sur le point de croire que je n'existe pas.</r1>
 		<r2 name="r2">T'es pas le premier.</r2>
 		<r3 name="r3">Je crois que je vais pleurer.</r3>	
 	</question>
@@ -318,13 +318,13 @@
 		<tag name="tag">Desespere</tag>
 		<r1 name="r1">Oui, je suis libre pour toi.</r1>
 		<r2 name="r2">Peut-être, faut voir...</r2>
-		<r3 name="r3">Non, ma date est juste parti aux toilettes.</r3>	
+		<r3 name="r3">Non, ma date est juste parti(e) aux toilettes.</r3>	
 	</question>
 
 	<question>
-		<q name="q">Je suis peut-être pas le plus populaire ici, mais je suis le seul qui te parles.</q>
+		<q name="q">Je suis peut-être pas le plus populaire ici, mais je suis le seul qui te parle.</q>
 		<tag name="tag">Desespere</tag>
-		<r1 name="r1">C'est déjà sa!</r1>
+		<r1 name="r1">C'est déjà ça!</r1>
 		<r2 name="r2">Au moins tu auras essayé.</r2>
 		<r3 name="r3">Tu n'es effectivement pas mon premier choix.</r3>	
 	</question>
@@ -342,7 +342,7 @@
 		<tag name="tag">Social</tag>
 		<r1 name="r1">Sa fait toujours plaisir!</r1>
 		<r2 name="r2">Comme d'habitude.</r2>
-		<r3 name="r3">Sa fait pas grand chose d'autre que d'attirer les crétins dans ton genre.</r3>	
+		<r3 name="r3">Ça fait pas grand chose d'autre que d'attirer les crétins dans ton genre.</r3>	
 	</question>
 
 	<question>
@@ -384,7 +384,7 @@
 		<tag name="tag">Religieux</tag>
 		<r1 name="r1">Hihi, non; j'ai conservé mes ailes.</r1>
 		<r2 name="r2">Bof, c'était pas si haut.</r2>
-		<r3 name="r3">Vraiment? tu crois que ce genres tu vas m'accrocher comme sa?</r3>	
+		<r3 name="r3">Vraiment? Pathétique!</r3>	
 	</question>
 
 	<question>
@@ -392,7 +392,7 @@
 		<tag name="tag">Religieux</tag>
 		<r1 name="r1">Heheh, oui j'ai peut-être des aires de famille</r1>
 		<r2 name="r2">Toi non plus t'es pas croyable!</r2>
-		<r3 name="r3">Non, je serait plus du style satanique.</r3>	
+		<r3 name="r3">Non, je serais plus du style satanique.</r3>	
 	</question>
 
 	<question>
@@ -400,7 +400,7 @@
 		<tag name="tag">Religieux</tag>
 		<r1 name="r1">Et encore, t'as rien vu!</r1>
 		<r2 name="r2">Pfft! n'importe quoi!</r2>
-		<r3 name="r3">Oh mon dieu, mais tu me saoûle avec tes lignes pathétiques.</r3>	
+		<r3 name="r3">Oh mon dieu, mais tu me saoûle avec tes lignes minables.</r3>	
 	</question>
 
 	<question>
@@ -408,7 +408,7 @@
 		<tag name="tag">Religieux</tag>
 		<r1 name="r1">Oui, il m'a déjà contacté, je dois rentrer vers 9hrs AM demain matin.</r1>
 		<r2 name="r2">Ah bon, je ne l'ai pas vu passé.</r2>
-		<r3 name="r3">Ta geule, péquenaud!</r3>	
+		<r3 name="r3">Ta gueule, péquenaud!</r3>	
 	</question>
 
 
