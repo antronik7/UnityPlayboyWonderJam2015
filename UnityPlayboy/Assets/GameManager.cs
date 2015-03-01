@@ -5,12 +5,14 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour {
 
 	public bool tourJoueur1 = true;
+    public AudioClip beer;
     public int maxTurn = 20;
     public int nbTurn;
     public int degre = 0;
     public Sprite[] spritesBarStress;
     public Sprite[] spritseBarAlcool;
     public Sprite[] spritesBarMove;
+    public AudioClip[] audioClips;
     public GameObject barStress1;
     public GameObject barAlcool1;
     public GameObject barStress2;
@@ -53,6 +55,11 @@ public class GameManager : MonoBehaviour {
 	Vector2 start;
 	Vector2 end;
 
+    enum sounds
+    {
+        music, beer, vomit, marche, doight
+    }
+
 	// Use this for initialization
 	void Start () {
 		testsScript = boxQuestions.GetComponent<Tests> ();
@@ -62,7 +69,13 @@ public class GameManager : MonoBehaviour {
         nbTurn = maxTurn;
         OnGUI();
         afficheImage();
+
 	}
+
+    void playSound(sounds sound)
+    {
+        AudioSource.PlayClipAtPoint(audioClips[(int)sound], Camera.main.transform.position);
+    }
 
     void afficheImage()
     {
@@ -105,6 +118,7 @@ public class GameManager : MonoBehaviour {
 
                             if (hit.transform == null)
                             {
+                                playSound(sounds.marche);
                                 joueur1.transform.position = new Vector2(joueur1.transform.position.x, joueur1.transform.position.y + 1);
 
                                 nbrActionMaxJoueur1--;
@@ -115,6 +129,7 @@ public class GameManager : MonoBehaviour {
                             }
                             else if (hit.collider.tag == "Target")
                             {
+                                playSound(sounds.doight);
                                 targetManagerScript = hit.collider.GetComponent<targetManager>();
                                 targetManagerScript.scoreJoueur = 0;
                                 personaliteRecu = targetManagerScript.personalite;
@@ -133,6 +148,7 @@ public class GameManager : MonoBehaviour {
                                 tableManagerScript = hit.collider.GetComponent<tableManager>();
                                 if (tableManagerScript.drink())
                                 {
+                                    playSound(sounds.beer);
                                     if (alcoholJoueur1 < alcoholMax)
                                     {
                                         alcoholJoueur1++;
@@ -148,6 +164,10 @@ public class GameManager : MonoBehaviour {
                                         if (nbrActionMaxJoueur1 <= 0)
                                             nbrActionMaxJoueur1 = 0;
                                         barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
+                                    }
+                                    else
+                                    {
+                                        playSound(sounds.vomit);
                                     }
                                 }
                             }
@@ -169,6 +189,7 @@ public class GameManager : MonoBehaviour {
 
                             if (hit.transform == null)
                             {
+                                playSound(sounds.marche);
                                 joueur1.transform.position = new Vector2(joueur1.transform.position.x, joueur1.transform.position.y - 1);
                                 nbrActionMaxJoueur1--;
                                 if (nbrActionMaxJoueur1 <= 0)
@@ -177,6 +198,7 @@ public class GameManager : MonoBehaviour {
                             }
                             else if (hit.collider.tag == "Target")
                             {
+                                playSound(sounds.doight);
                                 targetManagerScript = hit.collider.GetComponent<targetManager>();
                                 targetManagerScript.scoreJoueur = 0;
                                 personaliteRecu = targetManagerScript.personalite;
@@ -194,6 +216,7 @@ public class GameManager : MonoBehaviour {
                                 tableManagerScript = hit.collider.GetComponent<tableManager>();
                                 if (tableManagerScript.drink())
                                 {
+                                    playSound(sounds.beer);
                                     if (alcoholJoueur1 < alcoholMax)
                                     {
                                         alcoholJoueur1++;
@@ -205,11 +228,14 @@ public class GameManager : MonoBehaviour {
 
                                         barStress1.GetComponent<SpriteRenderer>().sprite = spritesBarStress[joueur1Stress];
                                         barAlcool1.GetComponent<SpriteRenderer>().sprite = spritseBarAlcool[alcoholJoueur1];
-                                        Debug.Log(alcoholJoueur1);
                                         nbrActionMaxJoueur1--;
                                         if (nbrActionMaxJoueur1 <= 0)
                                             nbrActionMaxJoueur1 = 0;
                                         barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
+                                    }
+                                    else
+                                    {
+                                        playSound(sounds.vomit);
                                     }
                                 }
                             }
@@ -231,6 +257,7 @@ public class GameManager : MonoBehaviour {
 
                             if (hit.transform == null)
                             {
+                                playSound(sounds.marche);
                                 joueur1.transform.position = new Vector2(joueur1.transform.position.x + 1, joueur1.transform.position.y);
                                 nbrActionMaxJoueur1--;
                                 if (nbrActionMaxJoueur1 <= 0)
@@ -239,6 +266,7 @@ public class GameManager : MonoBehaviour {
                             }
                             else if (hit.collider.tag == "Target")
                             {
+                                playSound(sounds.doight);
                                 targetManagerScript = hit.collider.GetComponent<targetManager>();
                                 targetManagerScript.scoreJoueur = 0;
                                 personaliteRecu = targetManagerScript.personalite;
@@ -257,6 +285,7 @@ public class GameManager : MonoBehaviour {
                                 tableManagerScript = hit.collider.GetComponent<tableManager>();
                                 if (tableManagerScript.drink())
                                 {
+                                    playSound(sounds.beer);
                                     if (alcoholJoueur1 < alcoholMax)
                                     {
                                         alcoholJoueur1++;
@@ -272,6 +301,10 @@ public class GameManager : MonoBehaviour {
                                         if (nbrActionMaxJoueur1 <= 0)
                                             nbrActionMaxJoueur1 = 0;
                                         barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
+                                    }
+                                    else
+                                    {
+                                        playSound(sounds.vomit);
                                     }
                                 }
                             }
@@ -293,6 +326,7 @@ public class GameManager : MonoBehaviour {
 
                             if (hit.transform == null)
                             {
+                                playSound(sounds.marche);
                                 joueur1.transform.position = new Vector2(joueur1.transform.position.x - 1, joueur1.transform.position.y);
                                 nbrActionMaxJoueur1--;
                                 if (nbrActionMaxJoueur1 <= 0)
@@ -301,6 +335,7 @@ public class GameManager : MonoBehaviour {
                             }
                             else if (hit.collider.tag == "Target")
                             {
+                                playSound(sounds.doight);
                                 targetManagerScript = hit.collider.GetComponent<targetManager>();
                                 targetManagerScript.scoreJoueur = 0;
                                 personaliteRecu = targetManagerScript.personalite;
@@ -319,6 +354,7 @@ public class GameManager : MonoBehaviour {
                                 tableManagerScript = hit.collider.GetComponent<tableManager>();
                                 if (tableManagerScript.drink())
                                 {
+                                    playSound(sounds.beer);
                                     if (alcoholJoueur1 < alcoholMax)
                                     {
                                         alcoholJoueur1++;
@@ -334,6 +370,10 @@ public class GameManager : MonoBehaviour {
                                         if (nbrActionMaxJoueur1 <= 0)
                                             nbrActionMaxJoueur1 = 0;
                                         barMove1.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur1];
+                                    }
+                                    else
+                                    {
+                                        playSound(sounds.vomit);
                                     }
                                 }
                             }
@@ -374,6 +414,7 @@ public class GameManager : MonoBehaviour {
 
                                     if (hit.transform == null)
                                     {
+                                        playSound(sounds.marche);
                                         joueur2.transform.position = new Vector2(joueur2.transform.position.x + 1, joueur2.transform.position.y);
                                         nbrActionMaxJoueur2--;
                                         if (nbrActionMaxJoueur2 <= 0)
@@ -384,11 +425,14 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
+                                        playSound(sounds.doight);
                                         targetManagerScript = hit.collider.GetComponent<targetManager>();
                                         targetManagerScript.scoreJoueur = 0;
                                         personaliteRecu = targetManagerScript.personalite;
                                         prenomRecu = targetManagerScript.prenom;
                                         nbrRepetion = 6;
+
+                                        joueur2.GetComponent<Animator>().SetTrigger("hitTarget");
 
                                         phaseJeux = false;
                                         rectangle.SetActive(true);
@@ -400,6 +444,7 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Table")
                                     {
+                                        playSound(sounds.beer);
                                         tableManagerScript = hit.collider.GetComponent<tableManager>();
                                         if (tableManagerScript.drink())
                                         {
@@ -441,6 +486,7 @@ public class GameManager : MonoBehaviour {
 
                                     if (hit.transform == null)
                                     {
+                                        playSound(sounds.marche);
                                         joueur2.transform.position = new Vector2(joueur2.transform.position.x - 1, joueur2.transform.position.y);
                                         nbrActionMaxJoueur2--;
                                         if (nbrActionMaxJoueur2 <= 0)
@@ -451,11 +497,14 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
+                                        playSound(sounds.doight);
                                         targetManagerScript = hit.collider.GetComponent<targetManager>();
                                         targetManagerScript.scoreJoueur = 0;
                                         personaliteRecu = targetManagerScript.personalite;
                                         prenomRecu = targetManagerScript.prenom;
                                         nbrRepetion = 6;
+
+                                        joueur2.GetComponent<Animator>().SetTrigger("hitTarget");
 
                                         phaseJeux = false;
                                         rectangle.SetActive(true);
@@ -464,6 +513,7 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Table")
                                     {
+                                        playSound(sounds.beer);
                                         tableManagerScript = hit.collider.GetComponent<tableManager>();
                                         if (tableManagerScript.drink())
                                         {
@@ -508,6 +558,7 @@ public class GameManager : MonoBehaviour {
 
                                     if (hit.transform == null)
                                     {
+                                        playSound(sounds.marche);
                                         joueur2.transform.position = new Vector2(joueur2.transform.position.x, joueur2.transform.position.y + 1);
                                         nbrActionMaxJoueur2--;
                                         if (nbrActionMaxJoueur2 <= 0)
@@ -518,11 +569,14 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
+                                        playSound(sounds.doight);
                                         targetManagerScript = hit.collider.GetComponent<targetManager>();
                                         targetManagerScript.scoreJoueur = 0;
                                         personaliteRecu = targetManagerScript.personalite;
                                         prenomRecu = targetManagerScript.prenom;
                                         nbrRepetion = 6;
+
+                                        joueur2.GetComponent<Animator>().SetTrigger("hitTarget");
 
                                         phaseJeux = false;
                                         rectangle.SetActive(true);
@@ -533,6 +587,7 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Table")
                                     {
+                                        playSound(sounds.beer);
                                         tableManagerScript = hit.collider.GetComponent<tableManager>();
                                         if (tableManagerScript.drink())
                                         {
@@ -578,6 +633,7 @@ public class GameManager : MonoBehaviour {
 
                                     if (hit.transform == null)
                                     {
+                                        playSound(sounds.marche);
                                         joueur2.transform.position = new Vector2(joueur2.transform.position.x, joueur2.transform.position.y - 1);
                                         nbrActionMaxJoueur2--;
                                         if (nbrActionMaxJoueur2 <= 0)
@@ -588,11 +644,14 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
+                                        playSound(sounds.doight);
                                         targetManagerScript = hit.collider.GetComponent<targetManager>();
                                         targetManagerScript.scoreJoueur = 0;
                                         personaliteRecu = targetManagerScript.personalite;
                                         prenomRecu = targetManagerScript.prenom;
                                         nbrRepetion = 6;
+
+                                        joueur2.GetComponent<Animator>().SetTrigger("hitTarget");
 
                                         phaseJeux = false;
                                         rectangle.SetActive(true);
@@ -603,6 +662,7 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Table")
                                     {
+                                        playSound(sounds.beer);
                                         tableManagerScript = hit.collider.GetComponent<tableManager>();
                                         if (tableManagerScript.drink())
                                         {
