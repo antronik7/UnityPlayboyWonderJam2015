@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<questionsList>
+	<question>
+		<q name="q">T'es belle comme un parasol</q>
+		<tag name="tag">Ose</tag>
+		<r1 name="r1">Merci, j'ai toujours voulu qu'on me dise ça!</r1>
+		<r2 name="r2">Ah ouais, j'avais pas vu...</r2>
+		<r3 name="r3">Ah bah, en faite je ne suis pas un parasol.</r3>	
+	</question>
+	
+	<question>
+		<q name="q">Ouf, il fait chaud depuis que t'es arrivé dans la place!</q>
+		<tag name="tag">Ose</tag>
+		<r1 name="r1">C'est normal, je dégage beaucoup!</r1>
+		<r2 name="r2">Eh bien, si tu veux je te commande un verre d'eau</r2>
+		<r3 name="r3">Dommages que tu refroidisse l'ambiance</r3>	
+	</question>
+	
+	<question>
+		<q name="q">Belles jambes! À quelle heure elles ouvrent?</q>
+		<tag name="tag">Ose</tag>
+		<r1 name="r1">Pour toi, dans quelques minutes!</r1>
+		<r2 name="r2">Bof, elles restes souvent fermées</r2>
+		<r3 name="r3">7:00 AM, le 29 février</r3>	
+	</question>
+
+	<question>
+		<q name="q">J'vais te traiter comme mes devoirs: t'étendre sur la table et te faire !</q>
+		<tag name="tag">Ose</tag>
+		<r1 name="r1">Oh là là!</r1>
+		<r2 name="r2">Bof, j'aime mieux être sur le dessus en général.</r2>
+		<r3 name="r3">J'ai entendu dire que tu ne faisait jamais tes devoirs.</r3>	
+	</question>
+
+	<question>
+		<q name="q">J'ai perdu ma virginité, est-ce que je peut avoir la tienne?</q>
+		<tag name="tag">Ose</tag>
+		<r1 name="r1">Certainement, si je peut t'être utile.</r1>
+		<r2 name="r2">Tu arrives trop tard mon loup.</r2>
+		<r3 name="r3">Non, mais tu peux avoir une claque dans la face.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Oh, désolé! Je croyais que ton chandail était écrit en braille.</q>
+		<tag name="tag">Ose</tag>
+		<r1 name="r1">Non, sa va! tu peux continuer!</r1>
+		<r2 name="r2">Tu dois être aveugle!</r2>
+		<r3 name="r3">Il est écrit : pas touche.</r3>	
+	</question>
+	
+	<question>
+		<q name="q">Euh, excuse moi? Est-ce que ce siège est libre?</q>
+		<tag name="tag">Reserve</tag>
+		<r1 name="r1">Oui, prends place!</r1>
+		<r2 name="r2">Euh, je sais pas, peut-être?</r2>
+		<r3 name="r3">Non, c'est pour un ami...</r3>	
+	</question>
+
+	<question>
+		<q name="q">On s'est pas déjà vu quelque part?</q>
+		<tag name="tag">Reserve</tag>
+		<r1 name="r1">Oui, dans mes rêves la nuit passée!</r1>
+		<r2 name="r2">Je ne pense pas, non.</r2>
+		<r3 name="r3">Non et, franchement, je ne regrette rien.</r3>
+	</question>
+
+	<question>
+		<q name="q">Je te regardais de loin et je me demandais si j'avais des chances...</q>
+		<tag name="tag">Reserve</tag>
+		<r1 name="r1">Ouais, tu as autant de chances que le prochain.</r1>
+		<r2 name="r2">Meh, je te donnes 10 minutes.</r2>
+		<r3 name="r3">Non, aucune chance pour toi.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Est-ce que je peut te payer un verre?</q>
+		<tag name="tag">Reserve</tag>
+		<r1 name="r1">Oui, bien sur!</r1>
+		<r2 name="r2">Ah, j'ai pas encore terminé ma bierre.</r2>
+		<r3 name="r3">Non, va voir ailleurs.</r3>
+	</question>
+
+	<question>
+		<q name="q">Je ne veux pas te déranger, mais je te trouve pas mal cute.</q>
+		<tag name="tag">Reserve</tag>
+		<r1 name="r1">Oooh! très gentil de ta part!</r1>
+		<r2 name="r2">Bof, tu en mets un peu trop.</r2>
+		<r3 name="r3">Tu me déranges quand même!</r3>
+	</question>
+
+	<question>
+		<q name="q">Salut, mes amis m'ont obligé à venir te parler.</q>
+		<tag name="tag">Reserve</tag>
+		<r1 name="r1">Tu diras merci à tes amis de ma part.</r1>
+		<r2 name="r2">C'est pas super sympa de la part de tes amis!</r2>
+		<r3 name="r3">Depuis quand tu as des amis?</r3>
+	</question>
+
+	<question>
+		<q name="q">Il fait beau dehors!</q>
+		<tag name="tag">Quotidien</tag>
+		<r1 name="r1">Oui, les arbres sont en fleur!</r1>
+		<r2 name="r2">Je ne sais pas moi, il fait combien dehors?</r2>
+		<r3 name="r3">Sa doit être mieux que ta face!</r3>	
+	</question>
+
+	<question>
+		<q name="q">Il parait qu'il va pleuvoir demain!</q>
+		<tag name="tag">Quotidien</tag>
+		<r1 name="r1">Ah bien, il était temps! Mes plantes commençaient à avoir très soif</r1>
+		<r2 name="r2">Ouais et puis quoi encore?</r2>
+		<r3 name="r3">Si tu veux je te donnes un avant goût d'une bonne douche froide!</r3>	
+	</question>
+
+	<question>
+		<q name="q">Le canadien a perdu sa partie hier soir!</q>
+		<tag name="tag">Quotidien</tag>
+		<r1 name="r1">C'était quand même une belle partie!</r1>
+		<r2 name="r2">Bof, moi et le hockey...</r2>
+		<r3 name="r3">Et tu crois que sa m'intéresse peut-être?</r3>	
+	</question>
+
+	<question>
+		<q name="q">Comment vas-tu?</q>
+		<tag name="tag">Quotidien</tag>
+		<r1 name="r1">Très bien, merci et toi.</r1>
+		<r2 name="r2">Comme un lundi.</r2>
+		<r3 name="r3">Sa pourrait aller mieux pour l'instant.</r3>
+	</question>
+
+	<question>
+		<q name="q">La bière n'est pas fameuse ici.</q>
+		<tag name="tag">Quotidien</tag>
+		<r1 name="r1">Non effectivement, beaucoup plus d'eau que de bière!</r1>
+		<r2 name="r2">Pas si mal.</r2>
+		<r3 name="r3">De quoi tu parles, c'est la meilleure du quartier!</r3>	
+	</question>
+
+	<question>
+		<q name="q">J'ai eu une journée d'enfer! Content de pouvoir relaxer en bonne compagnie!</q>
+		<tag name="tag">Quotidien</tag>
+		<r1 name="r1">Moi aussi! Il était temps que vienne la soirée.</r1>
+		<r2 name="r2">Heureux pour toi aussi...</r2>
+		<r3 name="r3">Sauf que tu n'es pas une bonne compagnie...</r3>	
+	</question>
+
+	<question>
+		<q name="q">Je préfère les chiens que les chats</q>
+		<tag name="tag">Animaux</tag>
+		<r1 name="r1">Moi aussi!</r1>
+		<r2 name="r2">Ah bon.</r2>
+		<r3 name="r3">Rien à foutre!</r3>	
+	</question>
+
+	<question>
+		<q name="q">Il parait qu'on peut juger une personne à comment elle traite les animaux.</q>
+		<tag name="tag">Animaux</tag>
+		<r1 name="r1">J'ai toujours pensé la même chose!</r1>
+		<r2 name="r2">Ok.</r2>
+		<r3 name="r3">Pourquoi est-ce que tu me parles d'animaux?</r3>	
+	</question>
+
+	<question>
+		<q name="q">J'ai une vrai personnalité de lion!</q>
+		<tag name="tag">Animaux</tag>
+		<r1 name="r1">J'aime les personnes avec de la gueule!</r1>
+		<r2 name="r2">Et moi, celle d'un paresseux.</r2>
+		<r3 name="r3">Tu m'emmerdes!</r3>	
+	</question>
+
+	<question>
+		<q name="q">Il fait chaud ici ou c'est toi qui est en chaleur?</q>
+		<tag name="tag">Animaux</tag>
+		<r1 name="r1">Ouaip, je suis en pleine période d'accouplement.</r1>
+		<r2 name="r2">Il fait chaud.</r2>
+		<r3 name="r3">Il fait froid.</r3>
+	</question>
+
+	<question>
+		<q name="q">J'ai un chat qui aimerait beaucoup te rencontrer!</q>
+		<tag name="tag">Animaux</tag>
+		<r1 name="r1">OooH! j'adore les chats!</r1>
+		<r2 name="r2">J'aime mieux les chiens.</r2>
+		<r3 name="r3">Ok.</r3>
+	</question>
+
+	<question>
+		<q name="q">J'ai toujours rêvé d'avoir un cheval!</q>
+		<tag name="tag">Animaux</tag>
+		<r1 name="r1">Moi aussi! sa ou une licorne.</r1>
+		<r2 name="r2">Ah bon.</r2>
+		<r3 name="r3">Je pourrais utiliser un cheval pour m'enfuir de cette conversation.</r3>
+	</question>
+
+	<question>
+		<q name="q">Il y aura seulement 7 planètes quand j'en aurai terminé avec Uranus!</q>
+		<tag name="tag">Rude</tag>
+		<r1 name="r1">Oh, damn!</r1>
+		<r2 name="r2">Pardon?</r2>
+		<r3 name="r3">Non, mais sa va pas la tête?</r3>	
+	</question>
+
+	<question>
+		<q name="q">Tu n'es peut-être pas la plus belle personne, mais si on ferme la lumière...</q>
+		<tag name="tag">Rude</tag>
+		<r1 name="r1">Je suis effectivement très à l'aise dans un coin sombre!</r1>
+		<r2 name="r2">Et encore, je suis toujours moche dans le noir.</r2>
+		<r3 name="r3">Par contre, il n'y aura rien pour réglé ton cas désespéré.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Il n'y a plus de place pour s'assoir, mais tu peux t'assoir sur ma face.</q>
+		<tag name="tag">Rude</tag>
+		<r1 name="r1">Wow, en plus elle me semble confortable!</r1>
+		<r2 name="r2">Ok, mais j'ai des gaz ce soir.</r2>
+		<r3 name="r3">Je viens de prendre ma douche, je ne voudrais pas me salir.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Ecartes-toi les fesses! Si t'es une bonne chienne, m'a slacké ta laisse!</q>
+		<tag name="tag">Rude</tag>
+		<r1 name="r1">Waouf! Waouf!</r1>
+		<r2 name="r2">...</r2>
+		<r3 name="r3">Godbless ta detresse si j'étais toi j'irai me chercher une hotesse.</r3>
+	</question>
+
+	<question>
+		<q name="q">Il y a quelque chose sur tes fesses! Mes yeux.</q>
+		<tag name="tag">Rude</tag>
+		<r1 name="r1">Ah! c'est parfait comme sa!</r1>
+		<r2 name="r2">Waaouh! Enlève moi sa de là!</r2>
+		<r3 name="r3">Et si sa continues comme sa, il y aura mon poing dans ta face!</r3>
+	</question>	
+
+	<question>
+		<q name="q">Si j'étais toi, je sauterais sur moi immédiatement.</q>
+		<tag name="tag">Rude</tag>
+		<r1 name="r1">Je suis pas mal d'accord avec toi!</r1>
+		<r2 name="r2">Dommages que tu ne sois pas moi dans ce cas.</r2>
+		<r3 name="r3">Bof, si t'étais moi tu voudrais plutôt être ailleurs.</r3>
+	</question>	
+
+
+	<question>
+		<q name="q">Il y a un problème avec mon cellulaire, je n'ai pas ton numéro!</q>
+		<tag name="tag">Pickup</tag>
+		<r1 name="r1">Le voici : 555-5555</r1>
+		<r2 name="r2">on va commencer juste par mon indicatif régional.</r2>
+		<r3 name="r3">Fait voir ton cellulaire... non, tout est très bien comme sa.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Toi, moi, de la crème fouettée et des menottes. Des questions?</q>
+		<tag name="tag">Pickup</tag>
+		<r1 name="r1">Oui, c'est quand la grande première?</r1>
+		<r2 name="r2">Oui, est-ce que les menottes sont nécessaires?</r2>
+		<r3 name="r3">Oui, est-ce qu'on peut enlever la composante "toi"?</r3>	
+	</question>
+
+	<question>
+		<q name="q">Je viens de réaliser ceci : tu ressembles beaucoup à ma prochaine date!</q>
+		<tag name="tag">Pickup</tag>
+		<r1 name="r1">Ta prochaine date est vraiment charmante!</r1>
+		<r2 name="r2">Ah bon! et bien, tu lui dira salut de ma part.</r2>
+		<r3 name="r3">Et toi tu ressemble à mon ex.</r3>	
+	</question>
+	
+	<question>
+		<q name="q">Sa te dis une soirée sexe et pizza, mais j'aime pas trop la pizza?</q>
+		<tag name="tag">Pickup</tag>
+		<r1 name="r1">Oui, je connais justement une bonne place en ville, mon appartement.</r1>
+		<r2 name="r2">J'aime mieux la pizza.</r2>
+		<r3 name="r3">Non, sa me dit rien qui vaille.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Dis, est-ce que tu embrasse des inconnus? Non? Donc je me présente...</q>
+		<tag name="tag">Pickup</tag>
+		<r1 name="r1">Enchanté de faire votre connaissance!</r1>
+		<r2 name="r2">Bof, même là, tu as tu travailles à faire.</r2>
+		<r3 name="r3">Ouf, t'avais plus de chance avant de te présenté.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Est-ce que tu dors sur ton ventre? Si non, est-ce que tu me le permet?</q>
+		<tag name="tag">Pickup</tag>
+		<r1 name="r1">Haha, ouais, c'est une idée!</r1>
+		<r2 name="r2">Je dors sur le côté.</r2>
+		<r3 name="r3">Je ne dors pas avec les naz dans ton genre.</r3>	
+	</question>	
+
+	<question>
+		<q name="q">Voudrais-tu sortir avec moi ce soir? S'il te plaaaiiiit...</q>
+		<tag name="tag">Desespere</tag>
+		<r1 name="r1">Ouais, sa peut s'envisager.</r1>
+		<r2 name="r2">Euh, non.</r2>
+		<r3 name="r3">Va te faire foutre (par quelqu'un d'autre).</r3>	
+	</question>
+
+	<question>
+		<q name="q">J'ai pas envie de rentrer seul ce soir, s'il te plait viens avec moi!</q>
+		<tag name="tag">Desespere</tag>
+		<r1 name="r1">Ça tombe bien, t'es mon dernier choix aussi!</r1>
+		<r2 name="r2">Peut-être demain soir...</r2>
+		<r3 name="r3">Tu me prends pour qui?</r3>	
+	</question>
+
+	<question>
+		<q name="q">Écoutes, j'ai perdu un pari et je dois venir te parler...</q>
+		<tag name="tag">Desespere</tag>
+		<r1 name="r1">Ah super, j'était sur le point de croire que j'existe pas.</r1>
+		<r2 name="r2">T'es pas le premier.</r2>
+		<r3 name="r3">Je crois que je vais pleurer.</r3>	
+	</question>
+
+	<question>
+		<q name="q">T'es célibataire? parce que sa serait franchement parfait.</q>
+		<tag name="tag">Desespere</tag>
+		<r1 name="r1">Oui, je suis libre pour toi.</r1>
+		<r2 name="r2">Peut-être, faut voir...</r2>
+		<r3 name="r3">Non, ma date est juste parti aux toilettes.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Je suis peut-être pas le plus populaire ici, mais je suis le seul qui te parles.</q>
+		<tag name="tag">Desespere</tag>
+		<r1 name="r1">C'est déjà sa!</r1>
+		<r2 name="r2">Au moins tu auras essayé.</r2>
+		<r3 name="r3">Tu n'es effectivement pas mon premier choix.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Je t'ai regardé toute la soirée et je me suis finalement décidé à venir te parler.</q>
+		<tag name="tag">Desespere</tag>
+		<r1 name="r1">Il était temps qu'on m'aborde!</r1>
+		<r2 name="r2">De quoi veux-tu parler..?</r2>
+		<r3 name="r3">Tu aurais du continuer à regarder</r3>	
+	</question>
+
+	<question>
+		<q name="q">Alors, sa fait quoi d'être la personne la plus belle du bar?</q>
+		<tag name="tag">Social</tag>
+		<r1 name="r1">Sa fait toujours plaisir!</r1>
+		<r2 name="r2">Comme d'habitude.</r2>
+		<r3 name="r3">Sa fait pas grand chose d'autre que d'attirer les crétins dans ton genre.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Est-ce que tu crois aux coups de foudre au premier regard? Si non, je repasse.</q>
+		<tag name="tag">Social</tag>
+		<r1 name="r1">Haha! oui tu es déjà pas mal foudroyant au premier regard!</r1>
+		<r2 name="r2">Ouin, ré-essayes-toi plus tard dans la soirée.</r2>
+		<r3 name="r3">À te voir aller, tu ne pourra jamais causer de coups de foudre.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Mes amis veulent savoir si tu trouves que je suis cute?</q>
+		<tag name="tag">Social</tag>
+		<r1 name="r1">Hmm, ouais pas mal!</r1>
+		<r2 name="r2">Bof, dis à tes amis que t'es dans la norme.</r2>
+		<r3 name="r3">Malheureusment, non.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Alors, qu'est-ce que tu veux? Une bière? Un verre? Moi?</q>
+		<tag name="tag">Social</tag>
+		<r1 name="r1">Toi!</r1>
+		<r2 name="r2">Rien pour l'instant.</r2>
+		<r3 name="r3">Un verre de criss moi patience!</r3>	
+	</question>
+
+	<question>
+		<q name="q">À part être très sexy, qu'est-ce que tu fais d'autre dans la vie?</q>
+		<tag name="tag">Social</tag>
+		<r1 name="r1">Je suis aussi pas mal dans un lit!</r1>
+		<r2 name="r2">Pas grand chose.</r2>
+		<r3 name="r3">Rien qui te concernes.</r3>	
+	</question>
+
+	
+
+	<question>
+		<q name="q">Est-ce que tu as eu mal quand t'es tombée du paradis?</q>
+		<tag name="tag">Religieux</tag>
+		<r1 name="r1">Hihi, non; j'ai conservé mes ailes.</r1>
+		<r2 name="r2">Bof, c'était pas si haut.</r2>
+		<r3 name="r3">Vraiment? tu crois que ce genres tu vas m'accrocher comme sa?</r3>	
+	</question>
+
+	<question>
+		<q name="q">Es-tu dieu? Parce que tu n'es pas croyable!</q>
+		<tag name="tag">Religieux</tag>
+		<r1 name="r1">Heheh, oui j'ai peut-être des aires de famille</r1>
+		<r2 name="r2">Toi non plus t'es pas croyable!</r2>
+		<r3 name="r3">Non, je serait plus du style satanique.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Dieu n'est peut-être pas réel, mais tes belles fesses le sont!</q>
+		<tag name="tag">Religieux</tag>
+		<r1 name="r1">Et encore, t'as rien vu!</r1>
+		<r2 name="r2">Pfft! n'importe quoi!</r2>
+		<r3 name="r3">Oh mon dieu, mais tu me saoûle avec tes lignes pathétiques.</r3>	
+	</question>
+
+	<question>
+		<q name="q">Quelqu'un devrait appeler Dieu, parce qu'il manque un ange!</q>
+		<tag name="tag">Religieux</tag>
+		<r1 name="r1">Oui, il m'a déjà contacté, je dois rentrer vers 9hrs AM demain matin.</r1>
+		<r2 name="r2">Ah bon, je ne l'ai pas vu passé.</r2>
+		<r3 name="r3">Ta geule, péquenaud!</r3>	
+	</question>
+
+
+
+
+</questionsList>

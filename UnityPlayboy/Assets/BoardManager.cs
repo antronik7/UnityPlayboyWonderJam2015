@@ -9,7 +9,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject[] table;
 	public int personalite;
 	public int columns = 20;
-	public int rows = 20;
+	public int rows = 13;
 
 	private Transform boardHolder;
 	private List <Vector3> gridPositions = new List<Vector3>();
@@ -18,9 +18,9 @@ public class BoardManager : MonoBehaviour {
 	{
 		gridPositions.Clear ();
 		
-		for(int x = 1; x < columns - 1; x++)
+		for(int x = 0; x < columns - 1; x++)
 		{
-			for(int y = 1; y < rows - 1; y++)
+			for(int y = 2; y < rows - 1; y++)
 			{
 				gridPositions.Add(new Vector3(x,y,0f));
 			}
@@ -50,8 +50,16 @@ public class BoardManager : MonoBehaviour {
 		{
 			Vector3 randomPosition = RandomPosition();
 			GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
-			GameObject instance = Instantiate (tileChoice, randomPosition, Quaternion.identity) as GameObject;
-			instance.transform.SetParent(boardHolder);
+
+            if (tileChoice.tag == "Table" && randomPosition.x > 0 && randomPosition.x < 6 && randomPosition.y > 8 && randomPosition.y < 14)
+            {
+
+            }
+            else
+            {
+                GameObject instance = Instantiate(tileChoice, randomPosition, Quaternion.identity) as GameObject;
+                instance.transform.SetParent(boardHolder);
+            }
 		}
 	}
 	
