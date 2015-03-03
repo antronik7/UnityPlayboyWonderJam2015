@@ -148,7 +148,7 @@ public class Tests : MonoBehaviour
         
 
         Texte.text = "\t"+ prenom +" "+ Indice + "\n\n" + Phrase1 + "\n" + Phrase2 + "\n" + Phrase3;
-        Texte.transform.position = new Vector3(0.12f, 0.23f, 0);
+        Texte.transform.position = new Vector3(0.105f, 0.23f, 0);
     }
 
     public void gererInput(int input)
