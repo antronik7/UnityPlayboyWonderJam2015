@@ -265,15 +265,21 @@ public class Tests : MonoBehaviour
         char[] TableauChar = Chaine.ToCharArray();
         int i;
 
-        float pourcentage = ((Chaine.Length * 0.02f) * Alcool) - 2;
-        int NouveauPourcentage = (int)pourcentage;
+        float pourcentage = (Chaine.Length * 0.03f * Alcool);
         int positionRandom1;
         int positionRandom2;
+        if (pourcentage > 0 && pourcentage < 1)
+            pourcentage = 1;
 
-        for (i = 0; i <= pourcentage; i++)
+        for (i = 0; i < pourcentage; i++)
         {
             positionRandom1 = Random.Range(0, Chaine.Length);
             positionRandom2 = Random.Range(0, Chaine.Length);
+            while ((Chaine[positionRandom1] == ' ') || (Chaine[positionRandom2] == ' '))
+            {
+                positionRandom1 = Random.Range(0, Chaine.Length);
+                positionRandom2 = Random.Range(0, Chaine.Length);
+            }
             CaractereTemp = Chaine[positionRandom1];
             TableauChar[positionRandom1] = Chaine[positionRandom2];
             TableauChar[positionRandom2] = CaractereTemp;
