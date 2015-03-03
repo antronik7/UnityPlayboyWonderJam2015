@@ -13,7 +13,9 @@ public class Menu : MonoBehaviour
 
 		if (transform.position.y == 0) {
 			if (GUI.Button (new Rect (Screen.width / 2 - 70, Screen.height / 4 + 220, 200, 50), "Jouer", StyleName)) {
-                Application.LoadLevel("MainAntoine");
+                transform.position = new Vector3 (0, 16, -11);
+                StartCoroutine(showInstruction());
+                
 			}
 			if (GUI.Button (new Rect (Screen.width / 2 - 110, Screen.height / 4 + 270, 350, 50), "Contrôles", StyleName))
 				transform.position = new Vector3 (0, 8, -11);
@@ -24,11 +26,16 @@ public class Menu : MonoBehaviour
 		} else if (transform.position.y == 8) {
 			if (GUI.Button (new Rect (Screen.width / 2 - 80, Screen.height-45, 350, 50), "Retour", StyleName))
 				transform.position = new Vector3 (0, 0, -11);
-		} else
+		} else if (transform.position.y == -8)
 		{
             if (GUI.Button(new Rect(Screen.width / 2 - 80, Screen.height - 45, 350, 50), "Retour", StyleName))
 				transform.position = new Vector3 (0, 0, -11);
 		}
 	}
 
+    IEnumerator showInstruction()
+    {
+        yield return new WaitForSeconds(3);
+        Application.LoadLevel("MainAntoine");
+    }
 }
