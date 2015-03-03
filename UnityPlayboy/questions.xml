@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <questionsList>
 	<question>
 		<q name="q">T'es belle comme un parasol</q>
@@ -209,7 +209,7 @@
 	</question>
 
 	<question>
-		<q name="q">Il n'y a plus de place pour s'assoir, mais, si tu veux, tu peux t'assoir sur ma face.</q>
+		<q name="q">Il n'y a plus de place pour s'assoir, si tu veux, tu peux t'assoir sur ma face.</q>
 		<tag name="tag">Rude</tag>
 		<r1 name="r1">Wow, en plus elle me semble confortable!</r1>
 		<r2 name="r2">Ok, mais j'ai des gaz ce soir.</r2>
