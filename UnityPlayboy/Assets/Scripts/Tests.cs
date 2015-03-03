@@ -21,8 +21,6 @@ public class Tests : MonoBehaviour
 		{ "a des gouts particuliers", "Animaux" , "Ose", "Reserve", "Desespere", "Rude", "Religieux", "Pickup", "Social", "Quotidien"},
         { "la roche", "Rude", "Religieux", "Desespere", "Pickup", "Animaux", "Quotidien", "Ose", "Reserve", "Social"}};
 
-   
-
     private GUIText Texte;
     public Animator animator;
     public List<QuestionClass> ListeQuestion;
@@ -267,7 +265,8 @@ public class Tests : MonoBehaviour
         char[] TableauChar = Chaine.ToCharArray();
         int i;
 
-        int pourcentage = (((int)(Chaine.Length * 0.03f)) * Alcool) - 2;
+        float pourcentage = ((Chaine.Length * 0.02f) * Alcool) - 2;
+        int NouveauPourcentage = (int)pourcentage;
         int positionRandom1;
         int positionRandom2;
 
