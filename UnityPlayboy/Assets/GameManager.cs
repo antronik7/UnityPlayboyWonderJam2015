@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour {
             {
                 if (nbrActionMaxJoueur1 > 0)
                 {
-                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    if (Input.GetKeyDown(KeyCode.W))
                     {
 
                         if (joueur1.transform.position.y < 19)
@@ -191,7 +191,7 @@ public class GameManager : MonoBehaviour {
                             boxCollider.enabled = true;
                         }
                     }
-                    else if (Input.GetKeyDown(KeyCode.DownArrow))
+                    else if (Input.GetKeyDown(KeyCode.S))
                     {
                         if (joueur1.transform.position.y > 0)
                         {
@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour {
                             boxCollider.enabled = true;
                         }
                     }
-                    else if (Input.GetKeyDown(KeyCode.RightArrow))
+                    else if (Input.GetKeyDown(KeyCode.D))
                     {
                         if (joueur1.transform.position.x < 19)
                         {
@@ -328,7 +328,7 @@ public class GameManager : MonoBehaviour {
                             boxCollider.enabled = true;
                         }
                     }
-                    else if (Input.GetKeyDown(KeyCode.LeftArrow))
+                    else if (Input.GetKeyDown(KeyCode.A))
                     {
                         if (joueur1.transform.position.x > 0)
                         {
@@ -409,12 +409,12 @@ public class GameManager : MonoBehaviour {
             {
                 if (nbrActionMaxJoueur2 > 0)
                 {
-                    if (!(Input.GetKeyDown(KeyCode.LeftArrow)) && !(Input.GetKeyDown(KeyCode.RightArrow)) && !(Input.GetKeyDown(KeyCode.DownArrow)) && !(Input.GetKeyDown(KeyCode.DownArrow)))
+                    if (!(Input.GetKeyDown(KeyCode.W)) && !(Input.GetKeyDown(KeyCode.A)) && !(Input.GetKeyDown(KeyCode.S)) && !(Input.GetKeyDown(KeyCode.D)))
                     {
                         horizontal = Input.GetAxis("Horizontal");
                         vertical = Input.GetAxis("Vertical");
 
-                        if (horizontal == 1)
+                        if (horizontal == 1 || Input.GetKeyDown(KeyCode.RightArrow))
                         {
                             if (!joystickInUse)
                             {
@@ -461,10 +461,11 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Table")
                                     {
-                                        playSound(sounds.beer);
+                                        
                                         tableManagerScript = hit.collider.GetComponent<tableManager>();
                                         if (tableManagerScript.drink())
                                         {
+                                            playSound(sounds.beer);
                                             if (alcoholJoueur2 < alcoholMax)
                                             {
                                                 alcoholJoueur2++;
@@ -486,7 +487,7 @@ public class GameManager : MonoBehaviour {
                                 }
                             }
                         }
-                        else if (horizontal == -1)
+                        else if (horizontal == -1 || Input.GetKeyDown(KeyCode.LeftArrow))
                         {
                             if (!joystickInUse)
                             {
@@ -530,10 +531,11 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Table")
                                     {
-                                        playSound(sounds.beer);
+                                        
                                         tableManagerScript = hit.collider.GetComponent<tableManager>();
                                         if (tableManagerScript.drink())
                                         {
+                                            playSound(sounds.beer);
                                             if (alcoholJoueur2 < alcoholMax)
                                             {
                                                 alcoholJoueur2++;
@@ -558,7 +560,7 @@ public class GameManager : MonoBehaviour {
                                 }
                             }
                         }
-                        else if (vertical == 1)
+                        else if (vertical == 1 || Input.GetKeyDown(KeyCode.UpArrow))
                         {
                             if (!joystickInUse)
                             {
@@ -604,10 +606,11 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Table")
                                     {
-                                        playSound(sounds.beer);
+                                        
                                         tableManagerScript = hit.collider.GetComponent<tableManager>();
                                         if (tableManagerScript.drink())
                                         {
+                                            playSound(sounds.beer);
                                             if (alcoholJoueur2 < alcoholMax)
                                             {
                                                 alcoholJoueur2++;
@@ -633,7 +636,7 @@ public class GameManager : MonoBehaviour {
                                 }
                             }
                         }
-                        else if (vertical == -1)
+                        else if (vertical == -1 || Input.GetKeyDown(KeyCode.DownArrow))
                         {
                             if (!joystickInUse)
                             {
@@ -679,10 +682,11 @@ public class GameManager : MonoBehaviour {
                                     }
                                     else if (hit.collider.tag == "Table")
                                     {
-                                        playSound(sounds.beer);
+                                        
                                         tableManagerScript = hit.collider.GetComponent<tableManager>();
                                         if (tableManagerScript.drink())
                                         {
+                                            playSound(sounds.beer);
                                             if (alcoholJoueur2 < alcoholMax)
                                             {
                                                 
@@ -740,11 +744,11 @@ public class GameManager : MonoBehaviour {
             {
                 if (nbrRepetion > 0)
                 {
-                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A))
                     {
                         testsScript.gererInput(1);
                     }
-                    else if (Input.GetKeyDown(KeyCode.DownArrow))
+                    else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                     {
                         testsScript.gererInput(2);
                     }
@@ -793,21 +797,22 @@ public class GameManager : MonoBehaviour {
             {
                 if (nbrRepetion > 0)
                 {
-                    if (!(Input.GetKeyDown(KeyCode.LeftArrow)) && !(Input.GetKeyDown(KeyCode.RightArrow)) && !(Input.GetKeyDown(KeyCode.DownArrow)) && !(Input.GetKeyDown(KeyCode.DownArrow)))
+                    if (!(Input.GetKeyDown(KeyCode.W)) && !(Input.GetKeyDown(KeyCode.A)) && !(Input.GetKeyDown(KeyCode.S)) && !(Input.GetKeyDown(KeyCode.D)))
                     {
                         vertical = Input.GetAxis("Vertical");
+                        horizontal = Input.GetAxis("Horizontal");
 
-                        if (vertical == 1 && !joystickInUse)
+                        if ((vertical == 1 && !joystickInUse) || (horizontal == -1 && !joystickInUse) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow))
                         {
                             testsScript.gererInput(1);
                             joystickInUse = true;
                         }
-                        else if (vertical == -1 && !joystickInUse)
+                        else if ((vertical == -1 && !joystickInUse) || (horizontal == 1 && !joystickInUse) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow))
                         {
                             testsScript.gererInput(2);
                             joystickInUse = true;
                         }
-                        else if (Input.GetButtonDown("Submit"))
+                        else if (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.Return))
                         {
                             nbrRepetion--;
                             if (attendreMessage == false)
@@ -858,7 +863,7 @@ public class GameManager : MonoBehaviour {
     public int drinkBeer_giveDelta() 
 {
     int newStressDelta;
-	return newStressDelta = Random.Range( 0 , 4);
+	return newStressDelta = Random.Range( 1 , 4);
 }
     public void addScoreToPlayer( int scoreDeLaPute , bool tourjoueur1 )
     {

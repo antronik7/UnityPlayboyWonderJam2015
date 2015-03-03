@@ -80,7 +80,7 @@ public class Tests : MonoBehaviour
 
         for (i = 0; i < 3; i++)
         {
-            while (!BonneReponse)
+            while (!BonneReponse && i == 0)
             {
                 Nombre = Random.Range(0, qTab.Length);
                 if (qTab[Nombre].findRep(allPersonalite, PersonnaliteVal) == 1)
@@ -88,6 +88,8 @@ public class Tests : MonoBehaviour
                     BonneReponse = true;
                 }
             }
+
+            BonneReponse = false;
 
             while (ListeId.Contains(Nombre))
                 Nombre = Random.Range(0, qTab.Length);
@@ -97,10 +99,10 @@ public class Tests : MonoBehaviour
 
         for (i = 0; i < 3; i++)
         {
-            Nombre = Random.Range(0, 2);
-            if (Nombre == 1)
+            Nombre = Random.Range(0, 7);
+            if (Nombre != 1)
             {
-                Nombre = Random.Range(0, 3);
+                Nombre = Random.Range(1, 3);
                 QuestionClass tmpSHit = ListeQuestion[Nombre];
                 ListeQuestion[Nombre] = ListeQuestion[i];
                 ListeQuestion[i] = tmpSHit;
