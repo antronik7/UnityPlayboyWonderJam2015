@@ -30,8 +30,8 @@ public class BoardManager : MonoBehaviour {
 	void Start () {
 		boardHolder = new GameObject ("Board").transform;
 		InitialiseList ();
-		LayoutObjectAtRandom (target, 10, 15);
-		LayoutObjectAtRandom (table, 10, 20);
+		LayoutObjectAtRandom (target, 12, 20);
+		LayoutObjectAtRandom (table, 12, 20);
 	}
 	
 	Vector3 RandomPosition()

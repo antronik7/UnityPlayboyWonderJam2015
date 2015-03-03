@@ -94,8 +94,7 @@ public class GameManager : MonoBehaviour {
 	void Update () {
         if(Input.GetKeyDown("escape"))
         {
-            tourJoueur1 = !tourJoueur1;
-            horloge();
+            Application.LoadLevel("Menu");
         }
 
         if (nbTurn < 1)
@@ -438,7 +437,10 @@ public class GameManager : MonoBehaviour {
                                             nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
-                                        joystickInUse = true;
+                                        if(!Input.GetKeyDown(KeyCode.RightArrow))
+                                        {
+                                            joystickInUse = true;
+                                        }
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
@@ -511,7 +513,10 @@ public class GameManager : MonoBehaviour {
                                             nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
-                                        joystickInUse = true;
+                                        if (!Input.GetKeyDown(KeyCode.LeftArrow))
+                                        {
+                                            joystickInUse = true;
+                                        }
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
@@ -584,7 +589,10 @@ public class GameManager : MonoBehaviour {
                                             nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
-                                        joystickInUse = true;
+                                        if (!Input.GetKeyDown(KeyCode.UpArrow))
+                                        {
+                                            joystickInUse = true;
+                                        }
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
@@ -660,7 +668,10 @@ public class GameManager : MonoBehaviour {
                                             nbrActionMaxJoueur2 = 0;
                                         barMove2.GetComponent<SpriteRenderer>().sprite = spritesBarMove[nbrActionMaxJoueur2];
 
-                                        joystickInUse = true;
+                                        if (!Input.GetKeyDown(KeyCode.DownArrow))
+                                        {
+                                            joystickInUse = true;
+                                        }
                                     }
                                     else if (hit.collider.tag == "Target")
                                     {
@@ -846,7 +857,6 @@ public class GameManager : MonoBehaviour {
                 else
                 {
                     addScoreToPlayer(targetManagerScript.getFinalScore(), tourJoueur1);
-                    Debug.Log(targetManagerScript.scoreJoueur);
                     testsScript.clearTextBox();
                     peuxAfficher = true;
                     tourJoueur1 = true;
@@ -863,7 +873,8 @@ public class GameManager : MonoBehaviour {
     public int drinkBeer_giveDelta() 
 {
     int newStressDelta;
-	return newStressDelta = Random.Range( 1 , 4);
+    newStressDelta = Random.Range(1, 4);
+	return newStressDelta;
 }
     public void addScoreToPlayer( int scoreDeLaPute , bool tourjoueur1 )
     {
@@ -928,7 +939,6 @@ public class GameManager : MonoBehaviour {
 
     void horloge()
     {
-        Debug.Log("Horloge");
         nbTurn--;
         degre += (360 / maxTurn) * (-1);
 

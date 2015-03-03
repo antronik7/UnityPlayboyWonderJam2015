@@ -153,7 +153,6 @@ public class Tests : MonoBehaviour
 
     public void gererInput(int input)
     {
-        Debug.Log("CALLER INPUT");
        
         if (input == 1)
         {
